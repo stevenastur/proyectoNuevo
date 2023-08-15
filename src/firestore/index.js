@@ -1,0 +1,1 @@
+export { getProds } from "./productos"

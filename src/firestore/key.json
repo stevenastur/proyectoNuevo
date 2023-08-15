@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "cocinandoconbigote-db3ec",
+  "private_key_id": "be181eb0bfbc66a26a03a052c083e3f79907afb9",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQC5dtIut4IKKnZb\nzbnObQrtWmcnuPceyGqk6rS2LOIKbgbZUMvbgkw8gchDJywaFYB+bdhy7hwxgifp\nm5PLEKMGezU+D8zVSS0LMTSK0E8KjJ2EqhRgUHgECEUGbDfwfs5q8tLr0CPJ2YaV\ncpurQTdCer8bSHFmKS6VNaMz82KBYAH1s/6yRLrZOnVTughxhAEDqjxAYvA2j0Jv\nAdkqrq0c1FhdvSLOz+0Dt5WYP7c2PIHkj0SJbXsgr7qfVwOvTCHJA+kg4AZwYRuO\nBMVR0IRXzf3hINw+wMVuzHIkqSg34NcPJipOwqMXl8bjAsKgAFaAvURcLXR2CE7x\nkMrVk4A7AgMBAAECggEABjfLuNiTvW31BTx57p0+1/xVmbPjuZAl7PI0n0S/g1Y6\nH3H2zJzkDakMsTnlw2cAetkXuQALV34HShehi6QeX45BQmLax8Ni2qn8Nxc1eBUv\neI4sjdL9uGzjcOFZ8sVr0SFx5DQRdjY3WFjnp9pRVTFdcHBk/5CdrGwWf6qcgL0v\nq06ZV5V3hb2+NHEm8ng9pYhJ3+iPY2bac8V13oVq9i28x++YZ110F9M+Mp1HsqDN\n4CMO24AAcmGTK6XOWtU5W/N0gKmHADfKtsUyCS/hIBNQ9BnzhIpETWMjiVmfVXoD\nf8k4WBSVzSGM+5rlaaVVa5Pf00tea8C7o1XdAvFH4QKBgQDftTGW7P8QGNx7WL50\n+c/UWjPqkuu+oAca+SNGX7hT2Tp7kemIaO5fE4Lv3tOiwVz0ZG80WnWp/qqxCppF\nicL+dy6mzw+nvcBCNkrJGA/2uKjQUasehq75j+BKuCYltsNbzgnvs3pldhMpVrbb\n59u2rnOo+wd5IeHAW8ClBwKpywKBgQDUPGMoGHhZiDrSihS/sfNCCSaknDxwDh8U\nFfCBk8fKrRC76dr+jM/yYH7tQKyhG9BBzR7mFX6WU/lwR1nZye387asbZC4pVvIQ\nnqqM/a5rN6h7ccljbkCw3h7Hw2xXByBy5t9/rOWBVLJJjTDeYkc/BjeNeBqv/y7z\ntWTQViZ1UQKBgQCUAQ34+31Yygn9NV50h95fcPpOJLwBl2B8EP6sjaGnH94YaRXn\noPysPH1xc6vzTxjPvC7ypTKZsJp/nTMp9JXkwzdDN1T1No4fgEoEN35ATjWp9Y5Q\nGO1kwTK0XJcodn1TnMJoKwc8X10YCX3bic+MUmjFEKgGFUuFd27CABxb9wKBgElk\nZImuBJg5ctXxqAEuQUe5sGJGIORDDd49RAEbIIDm3h2NXgyelx5i3iGfNtMzsg2/\nKAs6rZ7AhUaddeXJXYIUkhITz56+EVFL/QBqjVFIWvvtOk4nBzniZdSAsMtbjI4P\nZoRZPrg9mLW0nIyagba6qKVEPj5USWE/fhBJal0xAoGATLVp2D+y6ErRBX/7+DUJ\n+ebdvRIJdNsP/u24Z5lFWmBYziS+INjy6xD7qQNksCzpTYRuVz+MbXyaCqvsT1V9\nkltjRpysEEA2cJn0g/veoHcU0hM1yzNjuN6AQGL8I0k0SP6w+JLP5tzn+K3B8B+6\nDLz1xbLnxrp1iVsDZhoNftA=\n-----END PRIVATE KEY-----\n",
+  "client_email": "firebase-adminsdk-81ml1@cocinandoconbigote-db3ec.iam.gserviceaccount.com",
+  "client_id": "101576520034842736697",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-81ml1%40cocinandoconbigote-db3ec.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}

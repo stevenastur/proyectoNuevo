@@ -1,0 +1,1 @@
+export {ContainerProducts} from "./container-products"
