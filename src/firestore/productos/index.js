@@ -1,5 +1,7 @@
 import {
   collection,
+  doc,
+  getDoc,
   getDocs,
   getFirestore,
   query,
@@ -20,4 +22,21 @@ const getProds = async (nombreFiltrado) => {
   return snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
 };
 
-export { getProds };
+const getProd = async (id) => {
+  const db = getFirestore();
+
+  const prodRef = doc(db, "productos", id);
+
+  const snapshot = await getDoc(prodRef);
+
+  // if (snapshot.exists()) {
+
+  return { id: snapshot.id, ...snapshot.data() };
+
+  // } else {
+
+  //   throw new Error("No se encontró el producto");
+  // }
+};
+
+export { getProds, getProd };
