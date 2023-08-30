@@ -1,6 +1,9 @@
 import { Card, Button } from "react-bootstrap";
+import { useCart } from "../hook/carrito";
 
 const Item = ({ id, nombre, descripción, precio, verProducto, textButton }) => {
+  const { addToCart } = useCart()
+
   return (
     <>
       <Card key={id}>
@@ -11,6 +14,9 @@ const Item = ({ id, nombre, descripción, precio, verProducto, textButton }) => 
 
           <Button variant="secondary" onClick={verProducto}>
             {textButton}
+          </Button>
+          <Button onClick={() => addToCart(prod)}>
+            Agregar+
           </Button>
         </Card.Body>
       </Card>

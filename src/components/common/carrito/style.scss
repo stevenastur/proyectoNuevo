@@ -1,0 +1,16 @@
+.cart {
+  display: none;
+}
+
+.cart-button ~ input:checked ~ .cart {
+  height: 100%;
+  display: block;
+}
+
+.cart-button {
+  color: white;
+}
+
+h1 {
+  color: green!important  
+}

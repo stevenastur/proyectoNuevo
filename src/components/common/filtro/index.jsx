@@ -1,5 +1,5 @@
 import { useId } from "react";
-import { useFilters } from "../hook";
+import { useFilters } from "../hook/filtro";
 
 const FiltroProductos = () => {
   const { setFilters } = useFilters();

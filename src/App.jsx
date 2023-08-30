@@ -10,6 +10,7 @@ import { getAnalytics } from "firebase/analytics";
 // import { CarritoCompras } from "./context/carrito";
 import { ContainerDetail } from "./pages/container-detail";
 import { FiltroProvider } from "./context/filtro";
+import { CartProvider } from "./context/carrito";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -32,6 +33,7 @@ const analytics = getAnalytics(app);
 function App() {
   return (
     <div className="App">
+      <CartProvider>
       <FiltroProvider>
         <BrowserRouter>
           <Header />
@@ -44,6 +46,7 @@ function App() {
           <Header />
         </BrowserRouter>
       </FiltroProvider>
+      </CartProvider>
     </div>
   );
 }
