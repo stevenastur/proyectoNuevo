@@ -9,7 +9,7 @@ import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
 // import { CarritoCompras } from "./context/carrito";
 import { ContainerDetail } from "./pages/container-detail";
-import { Filtro } from "./context/filtro";
+import { FiltroProvider } from "./context/filtro";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -32,7 +32,7 @@ const analytics = getAnalytics(app);
 function App() {
   return (
     <div className="App">
-      <Filtro>
+      <FiltroProvider>
         <BrowserRouter>
           <Header />
           <Routes>
@@ -43,7 +43,7 @@ function App() {
           </Routes>
           <Header />
         </BrowserRouter>
-      </Filtro>
+      </FiltroProvider>
     </div>
   );
 }

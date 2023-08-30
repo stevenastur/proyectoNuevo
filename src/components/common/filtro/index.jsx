@@ -1,21 +1,29 @@
-import { Dropdown } from "react-bootstrap";
+import { useId } from "react";
 import { useFilters } from "../hook";
-
 
 const FiltroProductos = () => {
   const { setFilters } = useFilters();
+  const categoryFilterId = useId();
+
+  const handleChangeCategory = (event) => {
+    setFilters((prevState) => ({
+      ...prevState,
+      category: event.target.value,
+    }));
+  };
+
   return (
-    <Dropdown>
-      <Dropdown.Toggle variant="success" id="dropdown-basic">
-        Filtrar
-      </Dropdown.Toggle>
-      <Dropdown.Menu>
-        <Dropdown.Item>Pan lactal</Dropdown.Item>
-        <Dropdown.Item>Pan artesano</Dropdown.Item>
-        <Dropdown.Item>Pizza</Dropdown.Item>
-      </Dropdown.Menu>
-    </Dropdown>
-  )
+    <div>
+      <label htmlFor={categoryFilterId}>Categoría: </label>
+      <select id={categoryFilterId} onChange={handleChangeCategory}>
+        <option value="all">Todos</option>
+        <option value="Pan lactal">Pan lactal</option>
+        <option value="Pan sanguche">Pan sanguche</option>
+        <option value="Pan artesano">Pan artesano</option>
+        <option value="Pizza">Pizza</option>
+      </select>
+    </div>
+  );
 };
 
 export { FiltroProductos };

@@ -5,42 +5,42 @@
         "precio": "1100",
         "descripción": "biribiri",
         "nombre": "Pre-Pizza de cebolla",
-        "categoria": "Pizza",
+        "category": "Pizza",
         "__collections__": {}
       },
       "02": {
         "precio": "1100",
         "descripción": "biribiri",
         "nombre": "Pan lactal clasico",
-        "categoria": "Pan lactal",
+        "category": "Pan lactal",
         "__collections__": {}
       },
       "03": {
         "precio": "1200",
         "descripción": "biribiri",
         "nombre": "Pan lactal artesano",
-        "categoria": "Pan lactal",
+        "category": "Pan lactal",
         "__collections__": {}
       },
       "04": {
         "precio": "400",
         "descripción": "biribiri",
         "nombre": "Pan hamburguesa",
-        "categoria": "Pan sanguche",
+        "category": "Pan sanguche",
         "__collections__": {}
       },
       "05": {
         "precio": "600",
         "descripción": "biribiri",
         "nombre": "Pan ciabata",
-        "categoria": "Pan sanguche",
+        "category": "Pan sanguche",
         "__collections__": {}
       },
       "06": {
         "precio": "1200",
         "descripción": "biribiri",
         "nombre": "Pan de campo",
-        "categoria": "Pan artesano",
+        "category": "Pan artesano",
         "__collections__": {}
       }
     }

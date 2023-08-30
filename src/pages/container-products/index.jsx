@@ -10,25 +10,25 @@ const ContainerProducts = () => {
   const { nombreFiltrado } = useParams();
   const navigate = useNavigate();
 
+
   const { filters, filterProducts } = useFilters();
 
   const [prods, setProds] = useState([]);
   
-  const filtrado = filterProducts(prods);
-
-
   useEffect(() => {
     getProds(nombreFiltrado).then((data) => {
       setProds(data);
     });
   }, [nombreFiltrado]);
+  
+  const filtrado = filterProducts(prods)
 
   return (
     <>
       <Container>
         <FiltroProductos />
         <ItemList
-          items={prods.map((prod) => ({
+          items={filtrado.map((prod) => ({
             ...prod,
             verProducto: () => navigate(`/item-detail/${prod.id}`),
             textButton: "Ver producto",

@@ -2,7 +2,7 @@ import { createContext, useState } from "react";
 
 const FilterContext = createContext([]);
 
-const Filtro = ({ children }) => {
+const FiltroProvider = ({ children }) => {
     const [filters, setFilters] = useState({
         category:'all'
       })
@@ -11,4 +11,4 @@ const Filtro = ({ children }) => {
   );
 };
 
-export { FilterContext, Filtro };
+export { FilterContext, FiltroProvider };
