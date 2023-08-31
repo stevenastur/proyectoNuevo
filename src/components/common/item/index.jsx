@@ -2,7 +2,13 @@ import { Card, Button } from "react-bootstrap";
 import { useCart } from "../hook/carrito";
 
 const Item = ({ id, nombre, descripción, precio, verProducto, textButton }) => {
-  const { addToCart } = useCart()
+  const { addToCart, cart } = useCart();
+
+  console.log(cart);
+
+  const checkProdInCart = (prod) => {
+    return cart.some((item) => item.id === prod.id);
+  };
 
   return (
     <>
@@ -15,9 +21,7 @@ const Item = ({ id, nombre, descripción, precio, verProducto, textButton }) => 
           <Button variant="secondary" onClick={verProducto}>
             {textButton}
           </Button>
-          <Button onClick={() => addToCart(prod)}>
-            Agregar+
-          </Button>
+          <Button onClick={() => addToCart(product)}>Agregar+</Button>
         </Card.Body>
       </Card>
     </>

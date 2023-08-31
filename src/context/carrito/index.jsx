@@ -6,21 +6,22 @@ const CartProvider = ({ children }) => {
   const [cart, setCart] = useState([]);
 
   const addToCart = (prods) => {
-    const prodInCart = cart.findIndex(item => item.id === prod.id)
+    const prodInCart = cart.findIndex((item) => item.id === prod.id);
 
-    if(prodInCart >= 0){
-      const newCart = structuredClone(cart)
-      newCart[prodInCart].quantity += 1
-      return setCart(newCart)
+    if (prodInCart >= 0) {
+      const newCart = structuredClone(cart);
+      newCart[prodInCart].quantity += 1;
+      return setCart(newCart);
     }
-    setCart(prevState => ([
+    setCart((prevState) => [
       ...prevState,
       {
         ...prod,
-        quantity: 1
-      }
-    ]))
+        quantity: 1,
+      },
+    ]);
   };
+
 
   const removeToCart = () => {};
 
