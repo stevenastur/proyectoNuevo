@@ -21,7 +21,6 @@ const Item = ({ id, nombre, descripción, precio, verProducto, textButton }) => 
           <Button variant="secondary" onClick={verProducto}>
             {textButton}
           </Button>
-          <Button onClick={() => addToCart(product)}>Agregar+</Button>
         </Card.Body>
       </Card>
     </>
