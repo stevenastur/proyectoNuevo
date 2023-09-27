@@ -4,28 +4,50 @@ import { CartContext } from "../../../context/carrito";
 import { Button, Modal } from "react-bootstrap";
 
 const CarritoCompras = () => {
-  const carritoId = useId();
+  const carritoId = useId()
 
-  const { cart, setCart } = useContext(CartContext);
-  const [showModal, setShowModal] = useState(false);
+  const { cart, setCart } = useContext(CartContext)
+  const [showModal, setShowModal] = useState(false)
+  const [montoTotal, setMontoTotal] = useState(0)
 
   const quantity = cart
     ? cart.reduce((acc, curr) => acc + curr.quantity, 0)
-    : 0;
+    : 0
   const totalPrecio = cart
     ? cart.reduce((acc, curr) => acc + curr.quantity * curr.precio, 0)
-    : 0;
+    : 0
+
+  const phoneNumber = "54 11 56533910"
+  const message = "¡Hola! Mi pedido es el siguiente.."
+
+  const whatsappLink = `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${encodeURIComponent(message)}`
 
   const finalizarCompra = () => {
-    setCart([]);
-    setShowModal(true);
+    const montoTotal = cart.reduce(
+      (acc, curr) => acc + curr.quantity * curr.precio, 0)
 
-    console.log(cart);
-  };
+    const pedido = cart.map((item) => {
+      return `${item.nombre} (${item.quantity} unidades) - monto: $${item.quantity * item.precio}` })
 
+    const pedidoTexto = pedido.join("\n")
+
+    const pedidoMessage = `¡Hola! Mi pedido es el siguiente:\n${pedidoTexto} \n\nMonto total del pedido: $${montoTotal}`
+
+    const whatsappLink = `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${encodeURIComponent(pedidoMessage)}`
+
+    window.open(whatsappLink, "_blank")
+
+    setCart([])
+
+    const total = cart.reduce(
+      (acc, curr) => acc + curr.quantity * curr.precio, 0)
+    setMontoTotal(total)
+
+    setShowModal(true)
+  }
   const closeModal = () => {
-    setShowModal(false);
-  };
+    setShowModal(false)
+  }
 
   return (
     <>
@@ -34,11 +56,9 @@ const CarritoCompras = () => {
       </label>
       <input id={carritoId} type="checkbox" hidden />
 
-
       <aside className="cart">
         <ul>
           <li>
-
             <Modal show={showModal} onHide={closeModal}>
               <Modal.Header closeButton>
                 <Modal.Title>Compra exitosa!</Modal.Title>
@@ -56,7 +76,14 @@ const CarritoCompras = () => {
               <p className="letra">El carrito está vacío.</p>
             ) : (
               <>
-                <Button onClick={finalizarCompra}>Finalizar compra</Button>
+                <a
+                  href={whatsappLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Button onClick={finalizarCompra}>Finalizar compra</Button>
+                </a>
+
                 <div className="general">
                   <div className="letra">Items en el carrito: {quantity}</div>
                   <div className="letra">Total: ${totalPrecio}</div>
@@ -66,8 +93,7 @@ const CarritoCompras = () => {
                       cart.map((item) => (
                         <div key={item.id}>
                           <span className="letra">
-                            {item.quantity}-
-                            {item.nombre}-{item.marca}
+                            {item.quantity}-{item.nombre}-{item.marca}
                           </span>{" "}
                           - <span className="letra">${item.precio}</span>
                         </div>
@@ -79,9 +105,8 @@ const CarritoCompras = () => {
           </li>
         </ul>
       </aside>
-
     </>
-  );
-};
+  )
+}
 
-export { CarritoCompras };
+export { CarritoCompras }
