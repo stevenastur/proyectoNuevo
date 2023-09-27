@@ -1,21 +1,18 @@
 import { Button, Card } from "react-bootstrap";
 import { useCart } from "../hook/carrito";
-import { useState } from "react";
 
 const ItemDetail = ({ product }) => {
-  const { addToCart, removerItem, quantityPerItem } = useCart();
-  const [quantity, setQuantity] = useState(0);
+  const { addToCart, removerItem, getQuantityById } = useCart();
 
-
-  const onAdd = (value) => {
-    setQuantity(value);
+  const onAdd = () => {
     addToCart(product);
   };
 
-  const onLess = (value) => {
-    setQuantity(value);
+  const onLess = () => {
     removerItem(product);
   };
+
+  const quantity = getQuantityById(product.id);
 
   return (
     <div className="tarjetaGrande">

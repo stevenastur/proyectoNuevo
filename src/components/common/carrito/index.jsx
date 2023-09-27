@@ -29,35 +29,15 @@ const CarritoCompras = () => {
 
   return (
     <>
-      <div className="general">
-        <div className="letra">Items en el carrito: {quantity}</div>
-        <div className="letra">Total: ${totalPrecio}</div>
-        <span className="letra">...</span>
-        <div>
-          {cart &&
-            cart.map((item) => (
-              <div key={item.id}>
-                <span className="letra">
-                  {item.nombre}-{item.marca}
-                </span>{" "}
-                - <span className="letra">${item.precio}</span>
-              </div>
-            ))}
-        </div>
-      </div>
-
       <label htmlFor={carritoId} className="cart-button">
         Carrito de Compras
       </label>
       <input id={carritoId} type="checkbox" hidden />
 
+
       <aside className="cart">
         <ul>
           <li>
-            <div>
-              <h1>Pan</h1> $199
-            </div>
-            <Button onClick={finalizarCompra}>Finalizar compra</Button>
 
             <Modal show={showModal} onHide={closeModal}>
               <Modal.Header closeButton>
@@ -72,13 +52,34 @@ const CarritoCompras = () => {
                 </Button>
               </Modal.Footer>
             </Modal>
-            <footer>
-              <h1>Qty: 1</h1>
-              <button>+</button>
-            </footer>
+            {cart.length === 0 ? (
+              <p className="letra">El carrito está vacío.</p>
+            ) : (
+              <>
+                <Button onClick={finalizarCompra}>Finalizar compra</Button>
+                <div className="general">
+                  <div className="letra">Items en el carrito: {quantity}</div>
+                  <div className="letra">Total: ${totalPrecio}</div>
+                  <span className="letra">.</span>
+                  <div>
+                    {cart &&
+                      cart.map((item) => (
+                        <div key={item.id}>
+                          <span className="letra">
+                            {item.quantity}-
+                            {item.nombre}-{item.marca}
+                          </span>{" "}
+                          - <span className="letra">${item.precio}</span>
+                        </div>
+                      ))}
+                  </div>
+                </div>
+              </>
+            )}
           </li>
         </ul>
       </aside>
+
     </>
   );
 };
