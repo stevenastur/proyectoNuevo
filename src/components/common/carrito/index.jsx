@@ -2,6 +2,9 @@ import { useContext, useId, useState } from "react";
 import "./style.scss";
 import { CartContext } from "../../../context/carrito";
 import { Button, Modal } from "react-bootstrap";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
+
 
 const CarritoCompras = () => {
   const carritoId = useId();
@@ -68,7 +71,7 @@ const CarritoCompras = () => {
   return (
     <>
       <label htmlFor={carritoId} className="cart-button" onClick={handleShow}>
-        <span class="material-symbols-outlined">shopping_cart_checkout</span>
+      <FontAwesomeIcon icon={faShoppingCart} style={{ color: "#700d14" }} />
       </label>
       <input id={carritoId} type="checkbox" hidden />
 

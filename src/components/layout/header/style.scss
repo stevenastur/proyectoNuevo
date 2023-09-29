@@ -1,9 +1,21 @@
-$color-principal: #66612b;
-$color-letra: #ccc;
+$color-principal: #ffffff;
+$color-letra: #000000;
 $button-size: 40px;
+$color-imagen-rojo: #700d14;
 
 .link {
   color: $color-letra;
   text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: bold;
   margin: 0 6px;
+}
+
+.rounded-circle{
+ height: 4rem;
+ border: 2px solid black
+}
+
+.carrito{
+  color: $color-letra;
 }
