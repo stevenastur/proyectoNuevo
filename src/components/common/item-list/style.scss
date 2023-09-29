@@ -1,0 +1,17 @@
+.tarjetaGrande{
+    margin: 40px 0px;
+    display: grid;
+    grid-auto-rows: auto;
+    grid-gap: 1rem;
+    grid-template-columns: repeat(auto-fill, minmax(140px,1fr));
+    padding-bottom: 0;
+    padding-top: 0;
+    grid-gap: 2rem;
+    grid-template-columns: repeat(auto-fill, minmax(200px,1fr));
+}
+
+
+.tarjeta{
+    margin: 10px 20px;
+    height: 100%;
+}

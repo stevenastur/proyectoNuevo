@@ -1,0 +1,21 @@
+.tarjeta-individual{
+    height: 100%!important;
+    display: flex;
+    align-items: center;
+}
+
+.cuerpo-card{
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.columna-card{
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-end;
+    justify-content: space-between;
+    align-items: center;
+}

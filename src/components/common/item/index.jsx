@@ -1,7 +1,8 @@
-import { Card, Button } from "react-bootstrap";
+import { Card, Button, Row, Col } from "react-bootstrap";
 import { useCart } from "../hook/carrito";
+import "./style.scss";
 
-const Item = ({ id, nombre, descripción, precio, verProducto, textButton }) => {
+const Item = ({ id, nombre, precio, verProducto, textButton }) => {
   const { addToCart, cart } = useCart();
 
   const checkProdInCart = (prod) => {
@@ -10,15 +11,17 @@ const Item = ({ id, nombre, descripción, precio, verProducto, textButton }) => 
 
   return (
     <>
-      <Card key={id}>
-        <Card.Body>
+      <Card key={id} className="tarjeta-individual">
+        <Card.Body className="cuerpo-card">
+          <Col className="columna-card">
           <Card.Title>{nombre}</Card.Title>
-          <Card.Text> {descripción}</Card.Text>
+          </Col>
+          <Col className="columna-card">
           <Card.Text>$ {precio}</Card.Text>
-
           <Button variant="secondary" onClick={verProducto}>
             {textButton}
           </Button>
+          </Col>
         </Card.Body>
       </Card>
     </>
