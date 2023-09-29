@@ -10,6 +10,11 @@ const CarritoCompras = () => {
   const [showModal, setShowModal] = useState(false);
   const [montoTotal, setMontoTotal] = useState(0);
 
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
   const quantity = cart
     ? cart.reduce((acc, curr) => acc + curr.quantity, 0)
     : 0;
@@ -62,7 +67,7 @@ const CarritoCompras = () => {
 
   return (
     <>
-      <label htmlFor={carritoId} className="cart-button">
+      <label htmlFor={carritoId} className="cart-button" onClick={handleShow}>
         <span class="material-symbols-outlined">shopping_cart_checkout</span>
       </label>
       <input id={carritoId} type="checkbox" hidden />
@@ -87,30 +92,43 @@ const CarritoCompras = () => {
               <p className="letra">El carrito está vacío.</p>
             ) : (
               <>
-                <a
-                  href={whatsappLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <Button onClick={finalizarCompra}>Finalizar compra</Button>
-                </a>
-
-                <div className="general">
-                  <div className="letra">Items en el carrito: {quantity}</div>
-                  <div className="letra">Total: ${totalPrecio}</div>
-                  <span className="letra">.</span>
-                  <div>
-                    {cart &&
-                      cart.map((item) => (
-                        <div key={item.id}>
-                          <span className="letra">
-                            {item.quantity}-{item.nombre}-{item.marca}
-                          </span>{" "}
-                          - <span className="letra">${item.precio}</span>
-                        </div>
-                      ))}
-                  </div>
-                </div>
+                <Modal show={show} onHide={handleClose}>
+                  <Modal.Header closeButton></Modal.Header>
+                  <Modal.Body>
+                    <div className="general">
+                      <div className="letra">
+                        Items en el carrito: {quantity}
+                      </div>
+                      <div className="letra">Total: ${totalPrecio}</div>
+                      <span className="letra">.</span>
+                      <div>
+                        {cart &&
+                          cart.map((item) => (
+                            <div key={item.id}>
+                              <span className="letra">
+                                {item.quantity}-{item.nombre}-{item.marca}
+                              </span>{" "}
+                              - <span className="letra">${item.precio}</span>
+                            </div>
+                          ))}
+                      </div>
+                    </div>
+                  </Modal.Body>
+                  <Modal.Footer>
+                    <a
+                      href={whatsappLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <Button onClick={finalizarCompra}>
+                        Finalizar compra
+                      </Button>
+                    </a>
+                    <Button variant="secondary" onClick={handleClose}>
+                      Cerrar
+                    </Button>
+                  </Modal.Footer>
+                </Modal>
               </>
             )}
           </li>

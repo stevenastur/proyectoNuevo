@@ -4,8 +4,6 @@ import { useCart } from "../hook/carrito";
 const Item = ({ id, nombre, descripción, precio, verProducto, textButton }) => {
   const { addToCart, cart } = useCart();
 
-  console.log(cart);
-
   const checkProdInCart = (prod) => {
     return cart.some((item) => item.id === prod.id);
   };
