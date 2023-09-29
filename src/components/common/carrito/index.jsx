@@ -88,49 +88,43 @@ const CarritoCompras = () => {
                 </Button>
               </Modal.Footer>
             </Modal>
-            {cart.length === 0 ? (
-              <p className="letra">El carrito está vacío.</p>
-            ) : (
-              <>
-                <Modal show={show} onHide={handleClose}>
-                  <Modal.Header closeButton></Modal.Header>
-                  <Modal.Body>
-                    <div className="general">
-                      <div className="letra">
-                        Items en el carrito: {quantity}
-                      </div>
-                      <div className="letra">Total: ${totalPrecio}</div>
-                      <span className="letra">.</span>
-                      <div>
-                        {cart &&
-                          cart.map((item) => (
-                            <div key={item.id}>
-                              <span className="letra">
-                                {item.quantity}-{item.nombre}-{item.marca}
-                              </span>{" "}
-                              - <span className="letra">${item.precio}</span>
-                            </div>
-                          ))}
-                      </div>
+            <>
+              <Modal show={show} onHide={handleClose}>
+                <Modal.Header closeButton>
+                  <Modal.Title>Tu pedido ({quantity}) </Modal.Title>
+                </Modal.Header>
+                <Modal.Body>
+                  <div className="general">
+                    <div>
+                      {cart && cart.length === 0 ? (
+                        <p className="letra">El carrito está vacío.</p>
+                      ) : (
+                        cart.map((item) => (
+                          <div key={item.id}>
+                            <span>
+                              {item.nombre} {item.marca}
+                            </span>
+                            <span className="letra">{item.quantity}</span>
+                            <span className="letra"> ${item.precio}</span>
+                          </div>
+                        ))
+                      )}
                     </div>
-                  </Modal.Body>
-                  <Modal.Footer>
-                    <a
-                      href={whatsappLink}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <Button onClick={finalizarCompra}>
-                        Finalizar compra
-                      </Button>
-                    </a>
-                    <Button variant="secondary" onClick={handleClose}>
-                      Cerrar
-                    </Button>
-                  </Modal.Footer>
-                </Modal>
-              </>
-            )}
+                  </div>
+                </Modal.Body>
+                <Modal.Footer>
+                  <div className="letra">Total estimado</div>
+                  <div>${totalPrecio}</div>
+                  <a
+                    href={whatsappLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <Button onClick={finalizarCompra}>Iniciar compra</Button>
+                  </a>
+                </Modal.Footer>
+              </Modal>
+            </>
           </li>
         </ul>
       </aside>
