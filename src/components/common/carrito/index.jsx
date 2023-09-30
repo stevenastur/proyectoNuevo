@@ -1,7 +1,7 @@
 import { useContext, useId, useState } from "react";
 import "./style.scss";
 import { CartContext } from "../../../context/carrito";
-import { Button, Modal } from "react-bootstrap";
+import { Button, Modal, Offcanvas } from "react-bootstrap";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 
@@ -41,18 +41,18 @@ const CarritoCompras = () => {
     const pedido = cart.map((item) => {
       return `${item.nombre} (${item.quantity} unidades) - monto: $${
         item.quantity * item.precio
-      }`;
-    });
+      }`
+    })
 
-    const pedidoTexto = pedido.join("\n");
+    const pedidoTexto = pedido.join("\n")
 
-    const pedidoMessage = `¡Hola! Mi pedido es el siguiente:\n${pedidoTexto} \n\nMonto total del pedido: $${montoTotal}`;
+    const pedidoMessage = `¡Hola! Mi pedido es el siguiente:\n${pedidoTexto} \n\nMonto total del pedido: $${montoTotal}`
 
     const whatsappLink = `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${encodeURIComponent(
       pedidoMessage
-    )}`;
+    )}`
 
-    window.open(whatsappLink, "_blank");
+    window.open(whatsappLink, "_blank")
 
     setCart([]);
 
@@ -60,12 +60,12 @@ const CarritoCompras = () => {
       (acc, curr) => acc + curr.quantity * curr.precio,
       0
     );
-    setMontoTotal(total);
+    setMontoTotal(total)
 
-    setShowModal(true);
+    setShowModal(true)
   };
   const closeModal = () => {
-    setShowModal(false);
+    setShowModal(false)
   };
 
   return (
@@ -92,11 +92,11 @@ const CarritoCompras = () => {
               </Modal.Footer>
             </Modal>
             <>
-              <Modal show={show} onHide={handleClose}>
-                <Modal.Header closeButton>
-                  <Modal.Title>Tu pedido ({quantity}) </Modal.Title>
-                </Modal.Header>
-                <Modal.Body>
+              <Offcanvas show={show} onHide={handleClose} className="offcanvas-right" placement="end">
+                <Offcanvas.Header closeButton>
+                  <Offcanvas.Title>Tu pedido ({quantity}) </Offcanvas.Title>
+                </Offcanvas.Header>
+                <Offcanvas.Body>
                   <div className="general">
                     <div>
                       {cart && cart.length === 0 ? (
@@ -114,25 +114,23 @@ const CarritoCompras = () => {
                       )}
                     </div>
                   </div>
-                </Modal.Body>
-                <Modal.Footer>
                   <div className="letra">Total estimado</div>
                   <div>${totalPrecio}</div>
                   <a
                     href={whatsappLink}
                     target="_blank"
                     rel="noopener noreferrer"
-                  >
+                    >
                     <Button onClick={finalizarCompra}>Iniciar compra</Button>
                   </a>
-                </Modal.Footer>
-              </Modal>
+                    </Offcanvas.Body>
+              </Offcanvas>
             </>
           </li>
         </ul>
       </aside>
     </>
-  );
-};
+  )
+}
 
 export { CarritoCompras };

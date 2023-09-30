@@ -32,7 +32,7 @@ const analytics = getAnalytics(app);
 
 function App() {
   return (
-    <div className="App bg-black">
+    <div className="App color-fondo">
       <CartProvider>
       <FiltroProvider>
         <BrowserRouter>

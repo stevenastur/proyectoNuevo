@@ -1,9 +1,18 @@
+$color-principal: #ffffff;
+$color-letra: #000000;
+$button-size: 40px;
+$color-imagen-rojo: #700d14;
+$color-fondo-crema: #f8eee4;
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+.color-fondo{
+  background-color: $color-fondo-crema;
+}
 .App {
   // background-image: url("./assets/panes.jpg");
   // background-size: cover;

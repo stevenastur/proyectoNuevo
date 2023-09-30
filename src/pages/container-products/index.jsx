@@ -5,6 +5,8 @@ import { useEffect, useState } from "react";
 import { ItemList } from "../../components/common/item-list";
 import { FiltroProductos } from "../../components/common/filtro";
 import { useFilters } from "../../components/common/hook/filtro";
+import "./style.scss";
+
 
 const ContainerProducts = () => {
   const { nombreFiltrado } = useParams();
@@ -24,7 +26,7 @@ const ContainerProducts = () => {
 
   return (
     <>
-      <Container className="bg-black">
+      <Container className="color-fondo">
         <Col>
           <FiltroProductos />
         </Col>

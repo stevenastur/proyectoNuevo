@@ -13,3 +13,13 @@
 h1 {
   color: green!important  
 }
+
+.offcanvas-right {
+  transform: translateX(100%);
+  width: var(--bs-offcanvas-width);
+  transition: transform 0.3s ease-in-out;
+}
+
+.offcanvas-right.show {
+  transform: translateX(0); 
+}
