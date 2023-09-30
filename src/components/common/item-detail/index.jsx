@@ -1,5 +1,6 @@
 import { Button, Card } from "react-bootstrap";
 import { useCart } from "../hook/carrito";
+import { AddToCartButton } from "../boton/add-to-card";
 
 const ItemDetail = ({ product }) => {
   const { addToCart, removerItem, getQuantityById } = useCart();
@@ -22,15 +23,13 @@ const ItemDetail = ({ product }) => {
           <Card.Text> {product.descripción}</Card.Text>
           <Card.Text>$ {product.precio}</Card.Text>
 
-          {quantity === 0 ? (
-            <Button variant="secondary" onClick={() => onAdd(1)}>Agregar al Carrito</Button>
-          ) : (
-            <>
-              <Button variant="secondary" onClick={() => onLess(quantity - 1)}>-</Button>
-              {quantity}
-              <Button variant="secondary" onClick={() => onAdd(quantity + 1)}>+</Button>
-            </>
-          )}
+          <AddToCartButton
+            product={product}
+            addToCart={addToCart}
+            removerItem={removerItem}
+            getQuantityById={getQuantityById}
+            quantity={quantity}
+          />
         </Card.Body>
       </Card>
     </div>
