@@ -28,7 +28,7 @@ const FiltroProductos = () => {
     <div>
       <Dropdown onSelect={handleChangeCategory}>
         <label htmlFor={categoryFilterId} className="categoria">Categoría: </label>
-        <Dropdown.Toggle variant="success" id="dropdown-basic">
+        <Dropdown.Toggle variant="success" id="dropdown-basic" className="nombre-filtro">
           {selectedCategory}
         </Dropdown.Toggle>
 

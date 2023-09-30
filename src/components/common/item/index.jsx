@@ -19,13 +19,13 @@ const Item = ({ id, nombre, precio, verProducto, textButton }) => {
   const quantity = getQuantityById(id);
 
   const productImages = {
-    campo: campo,
-    ciabatta: ciabatta,
-    burga: burga,
-    pizzaCebolla: pizzaCebolla,
-    lactal: lactal,
+    campo: {campo},
+    ciabatta: {ciabatta},
+    burga: {burga},
+    pizzaCebolla: {pizzaCebolla},
+    lactal: {lactal},
     lactalArtesano: lactalArtesano,
-  };
+  }
 
   return (
     <>

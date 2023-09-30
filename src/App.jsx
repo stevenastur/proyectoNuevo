@@ -41,7 +41,6 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/productos" element={<ContainerProducts />} />
             <Route path="/item-detail/:id" element={<ContainerDetail/>}/>
-            {/* <Route path="/carrito" element={<ShoppingCart />} /> */}
           </Routes>
           <Header />
         </BrowserRouter>
