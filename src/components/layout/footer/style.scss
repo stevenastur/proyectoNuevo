@@ -1,0 +1,51 @@
+$color-principal: #ffffff;
+$color-letra: #000000;
+$button-size: 40px;
+$color-imagen-rojo: #700d14;
+$color-fondo-crema: #f8eee4;
+
+.link {
+  color: $color-fondo-crema;
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin: 0 6px;
+}
+
+.footer-abajo{
+    display: flex;
+    justify-content: center;
+}
+
+.rounded-circle {
+  height: 4rem;
+  border: 2px solid black;
+}
+
+.carrito {
+  color: $color-fondo-crema;
+}
+
+.footer {
+  background-color: $color-imagen-rojo;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+
+}
+
+.datos{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.datos h2{
+    font-size: 1.3rem;
+}
+
+.datos h3{
+    font-size: 1.2rem;
+}

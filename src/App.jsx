@@ -11,6 +11,7 @@ import { getAnalytics } from "firebase/analytics";
 import { ContainerDetail } from "./pages/container-detail";
 import { FiltroProvider } from "./context/filtro";
 import { CartProvider } from "./context/carrito";
+import { Footer } from "./components/layout/footer";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -42,6 +43,7 @@ function App() {
             <Route path="/productos" element={<ContainerProducts />} />
             <Route path="/item-detail/:id" element={<ContainerDetail/>}/>
           </Routes>
+          <Footer/>
         </BrowserRouter>
       </FiltroProvider>
       </CartProvider>
