@@ -3,11 +3,10 @@
     display: grid;
     grid-auto-rows: auto;
     grid-gap: 1rem;
-    grid-template-columns: repeat(auto-fill, minmax(140px,1fr));
+    grid-template-columns: 2fr 2fr;
     padding-bottom: 0;
     padding-top: 0;
     grid-gap: 2rem;
-    grid-template-columns: repeat(auto-fill, minmax(200px,1fr));
 }
 
 

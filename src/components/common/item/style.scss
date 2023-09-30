@@ -1,25 +1,45 @@
 .tarjeta-individual{
     height: 100%!important;
     display: flex;
-    align-items: center;
+    flex-direction: row;
 }
 
 .cuerpo-card{
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    padding: 2px !important;
+    display: grid;
+    grid-auto-rows: auto;
+    grid-gap: 1rem;
+    grid-template-columns: 2fr 2fr;
+    grid-template-rows: 3fr 2fr;
+    grid-template-areas: 
+    "imagen columna-card"
+    "imagen columna-card-agregar";
+    padding-bottom: 0;
+    padding-top: 0;
+    grid-gap: 2rem;
 }
 
 .columna-card{
     display: flex;
-    flex-wrap: wrap;
-    align-content: flex-end;
-    justify-content: space-between;
-    align-items: center;
+    flex-direction: row;
+    padding-bottom: 0;
+    padding-top: 0;
+
+}
+.precio{
+    margin: 0 2rem;
+}
+.boton-ver{
+    margin: 0 2rem;
 }
 
 .columna-card-agregar{
-    
+    display: flex;
+    padding-bottom: 0;
+    padding-top: 0;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-content: space-between;
+    justify-content: space-evenly;
+    align-items: center;
 }
