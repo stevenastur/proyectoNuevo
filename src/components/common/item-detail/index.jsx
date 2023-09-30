@@ -19,6 +19,7 @@ const ItemDetail = ({ product }) => {
     <div className="tarjetaGrande">
       <Card key={product.id} className="tarjeta">
         <Card.Body>
+        <Card.Img variant="top" src={product.img} />
           <Card.Title>{product.nombre}</Card.Title>
           <Card.Text> {product.descripción}</Card.Text>
           <Card.Text>$ {product.precio}</Card.Text>
