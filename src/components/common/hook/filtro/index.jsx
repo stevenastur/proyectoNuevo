@@ -6,7 +6,7 @@ function useFilters() {
 
   const filterProducts = (prods) => {
     return prods.filter((prod) => {
-      return filters.category === "todos" || prod.category === filters.category;
+      return filters.category === "Todos" || prod.category === filters.category;
     });
   };
 

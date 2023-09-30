@@ -5,18 +5,27 @@ $color-imagen-rojo: #700d14;
 $color-fondo-crema: #f8eee4;
 
 .link {
-  color: $color-letra;
+  color: $color-fondo-crema;
   text-decoration: none;
   font-size: 1.1rem;
   font-weight: bold;
   margin: 0 6px;
 }
 
-.rounded-circle{
- height: 4rem;
- border: 2px solid black
+.rounded-circle {
+  height: 4rem;
+  border: 2px solid black;
 }
 
-.carrito{
-  color: $color-letra;
+.carrito {
+  color: $color-fondo-crema;
+}
+
+.header {
+  background-color: $color-imagen-rojo;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
 }

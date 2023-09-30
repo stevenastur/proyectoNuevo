@@ -3,7 +3,7 @@ import { createContext, useEffect, useState } from "react";
 const FilterContext = createContext([]);
 
 const FiltroProvider = ({ children }) => {
-    const [filters, setFilters] = useState({category:'todos'})
+    const [filters, setFilters] = useState({category:'Todos'})
 
       const loadFilterFromLocalStorage = () => {
         const storedFilter = localStorage.getItem("filters");

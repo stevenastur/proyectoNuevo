@@ -6,5 +6,12 @@ $color-fondo-crema: #f8eee4;
 
 .color-fondo{
     background-color: $color-fondo-crema;
-    height: 80vh;
+    height: auto;
+}
+
+.titulo{
+    color: $color-letra;
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
 }

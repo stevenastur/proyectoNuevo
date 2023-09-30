@@ -34,6 +34,7 @@ const ContainerProducts = () => {
   return (
     <>
       <Container className="color-fondo">
+        <h1 className="titulo">Nuestro Menú</h1>
         <Col>
           <FiltroProductos />
         </Col>

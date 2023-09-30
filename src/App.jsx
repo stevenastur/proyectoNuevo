@@ -42,7 +42,6 @@ function App() {
             <Route path="/productos" element={<ContainerProducts />} />
             <Route path="/item-detail/:id" element={<ContainerDetail/>}/>
           </Routes>
-          <Header />
         </BrowserRouter>
       </FiltroProvider>
       </CartProvider>

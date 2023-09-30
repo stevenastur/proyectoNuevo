@@ -1,7 +1,7 @@
 import { useContext, useId, useState } from "react";
 import "./style.scss";
 import { CartContext } from "../../../context/carrito";
-import { Button, Modal, Offcanvas } from "react-bootstrap";
+import { Button, Card, Modal, Offcanvas } from "react-bootstrap";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 
@@ -71,7 +71,7 @@ const CarritoCompras = () => {
   return (
     <>
       <label htmlFor={carritoId} className="cart-button" onClick={handleShow}>
-      <FontAwesomeIcon icon={faShoppingCart} style={{ color: "#700d14" }} />
+      <FontAwesomeIcon icon={faShoppingCart} style={{ color: "#f8eee4" }} />
       </label>
       <input id={carritoId} type="checkbox" hidden />
 
@@ -99,6 +99,7 @@ const CarritoCompras = () => {
                 <Offcanvas.Body>
                   <div className="general">
                     <div>
+                      <Card>
                       {cart && cart.length === 0 ? (
                         <p className="letra">El carrito está vacío.</p>
                       ) : (
@@ -111,7 +112,8 @@ const CarritoCompras = () => {
                             <span className="letra"> ${item.precio}</span>
                           </div>
                         ))
-                      )}
+                        )}
+                        </Card>
                     </div>
                   </div>
                   <div className="letra">Total estimado</div>
