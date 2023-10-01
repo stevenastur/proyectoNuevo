@@ -4,7 +4,7 @@ $button-size: 40px;
 $color-imagen-rojo: #700d14;
 $color-fondo-crema: #f8eee4;
 
-.link {
+.link-footer {
   color: $color-fondo-crema;
   text-decoration: none;
   font-size: 1.1rem;
@@ -12,40 +12,118 @@ $color-fondo-crema: #f8eee4;
   margin: 0 6px;
 }
 
-.footer-abajo{
-    display: flex;
-    justify-content: center;
-}
-
 .rounded-circle {
   height: 4rem;
   border: 2px solid black;
 }
 
-.carrito {
-  color: $color-fondo-crema;
+.contenedor-footer {
+  display: flex;
+  flex-direction: column;
+  margin-top: 3.5rem;
 }
 
 .footer {
   background-color: $color-imagen-rojo;
-  position: fixed;
-  top: 0;
-  left: 0;
   width: 100%;
-  z-index: 1000;
-
+  display: flex;
+  justify-content: space-between; 
+  padding: 20px;
 }
 
-.datos{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.datos-completos {
+  display: grid;
+  grid-auto-rows: auto;
+  grid-gap: 1rem;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 2fr;
+  grid-template-areas: "navegacion contacto atencion";
 }
 
-.datos h2{
-    font-size: 1.3rem;
+.datos h1{
+  width: 100%;
+  font-size: 1.12rem;
+  padding-bottom: 7px;
 }
 
-.datos h3{
-    font-size: 1.2rem;
+.datos P {
+  font-size: 1rem;
+}
+
+
+.datos {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center; 
+  margin: 10px;
+  color: $color-fondo-crema;
+}
+
+
+.footer ul {
+  list-style: none;
+  padding: 0;
+}
+
+
+.footer ul li {
+  margin-bottom: 5px; 
+}
+
+.navegacion ul {
+  display: flex;
+  flex-direction: column;
+}
+
+.font{
+  padding-top: 0.23rem;
+  padding-right: 0.3rem;
+}
+
+.titulos{
+  display: flex;
+  border-bottom: #000000 solid 2px;
+  margin-bottom: 1rem;
+  width: 100%;
+  justify-content: center;
+}
+.nombre-titulo{
+  display: flex; 
+}
+.subtitulos{
+  display: flex;
+}
+
+
+.datos-navegacion{
+  margin-top: 2rem;
+  display: grid;
+  grid-auto-rows: auto;
+  grid-gap: 1rem;
+  grid-template-columns: 2fr 3fr 2fr;
+  grid-template-rows: 2fr;
+  grid-template-areas: "imagen navegacion";
+  width: 100%;
+}
+
+.datos-navegacion h1{
+  font-size: 1.9rem;
+  color: $color-fondo-crema;
+}
+
+.imagen-footer{
+  width: 7rem;
+  height: 7rem;
+}
+
+.imagen h1{
+  font-size: 0.7em;
+  margin-bottom: 1px;
+}
+
+.navbar-brand{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }

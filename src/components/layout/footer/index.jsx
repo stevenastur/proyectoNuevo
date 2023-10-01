@@ -3,44 +3,82 @@ import { NavLink } from "react-router-dom";
 import "./style.scss";
 import { CarritoCompras } from "../../common/carrito";
 import logo from "../../../assets/logo.jpg";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faCreditCard,
+  faEnvelope,
+  faHouse,
+  faLocationDot,
+  faTruck,
+} from "@fortawesome/free-solid-svg-icons";
 
 const Footer = () => {
   return (
     <>
       <Navbar className="footer">
-        <Container >
-          <Col xs={1}>
-            <Navbar.Brand href="/">
-              <Image src={logo} roundedCircle />
-            </Navbar.Brand>
-          </Col>
-          <Col xs={2}>
-            <h1>Navegación</h1>
-            <NavLink className="link" to="/">
-              Inicio
-            </NavLink>
-            <NavLink className="link" to="/productos">
-              Productos
-            </NavLink>
-          </Col>
-          <Col xs={5} className="datos">
-            <h1>Contacto</h1>
-            <div>
-              <div>
-                <h2>Lomas de Zamora</h2>
+        <Container className="contenedor-footer">
+          <div className="datos-completos">
+            <Col className="datos atencio alineados">
+              <div className="titulos">
+                <div className="nombre-titulo">
+                  <FontAwesomeIcon className="font" icon={faTruck} />
+                  <h1>ENVÍOS Y RETIRO</h1>
+                </div>
               </div>
               <div>
-                <h2>cocinandoconbigote@gmail.com</h2>
+                <p>Tu compra estará disponible a partir de mañana</p>
+                <p>Lunes a Viernes</p>
               </div>
-            </div>
-          </Col>
-
-          <Col xs={5} className="datos">
-            <h1>Atencion al cliente</h1>
-            <h2>Horarios de servicio al WhatSapp:</h2>
-            <h3>Lunes a Viernes</h3>
-            <h3>Horarios: 10 a 17 horas.</h3>
-          </Col>
+            </Col>
+            <Col className="datos navegacion">
+              <div className="titulos">
+                <div className="nombre-titulo">
+                  <FontAwesomeIcon className="font" icon={faCreditCard} />
+                  <h1>MEDIO DE PAGO</h1>
+                </div>
+              </div>
+              <ul>
+                <p>Transferencia o efectivo</p>
+              </ul>
+            </Col>
+            <Col className="datos contacto alineados">
+              <div className="titulos">
+                <div className="nombre-titulo">
+                  <FontAwesomeIcon className="font" icon={faHouse} />
+                  <h1>CONTACTO</h1>
+                </div>
+              </div>
+              <ul>
+                <div className="subtitulos">
+                  <FontAwesomeIcon className="font" icon={faLocationDot} />
+                  <p>Lomas de Zamora</p>
+                </div>
+                <div className="subtitulos">
+                  <FontAwesomeIcon className="font" icon={faEnvelope} />
+                  <p>cocinandoconbigote@gmail.com</p>
+                </div>
+              </ul>
+            </Col>
+          </div>
+          <div className="datos-navegacion">
+            <Col className="imagen">
+              <Navbar.Brand href="/">
+                <Image className="imagen-footer" src={logo} roundedCircle />
+                <h1>Raíces italianas, </h1>
+                <h1>Manos Argentinas.</h1>
+              </Navbar.Brand>
+            </Col>
+            <Col className="navegacion">
+              <h1>Navegacion</h1>
+              <NavLink className="link-footer" to="/">
+                <p>Inicio</p>
+              </NavLink>
+              <NavLink className="link-footer" to="/productos">
+                <p>Productos</p>
+              </NavLink>
+            </Col>
+            <Col></Col>
+          </div>
         </Container>
       </Navbar>
     </>

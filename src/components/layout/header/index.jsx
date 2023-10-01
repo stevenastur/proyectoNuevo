@@ -16,10 +16,10 @@ const Header = () => {
           </Col>
 
           <Col xs={10}>
-            <NavLink className="link" to="/">
+            <NavLink className="link-header" to="/">
               Home
             </NavLink>
-            <NavLink className="link" to="/productos">
+            <NavLink className="link-header" to="/productos">
               Productos
             </NavLink>
           </Col>
