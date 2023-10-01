@@ -14,7 +14,7 @@ $color-fondo-crema: #f8eee4;
 
 .rounded-circle {
   height: 4rem;
-  border: 2px solid black;
+  border: 1px solid black;
 }
 
 .carrito {
@@ -28,4 +28,10 @@ $color-fondo-crema: #f8eee4;
   left: 0;
   width: 100%;
   z-index: 1000;
+}
+
+.etiquetas{
+  display: flex;
+  flex-direction: row-reverse;
+  margin-right: 3rem;
 }

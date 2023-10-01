@@ -1,4 +1,45 @@
 body {
-    background-color: #FFFACD;
+  background-color: #fffacd;
+}
 
+.home-container {
+  text-align: center;
+  padding: 20px;
+}
+
+/* Estilos para el encabezado */
+.home-header {
+  background-color: #f8eee4; /* Color de fondo */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3); /* Sombra */
+  margin-bottom: 20px;
+  h1 {
+    font-size: 2rem;
+    color: #700d14; /* Color del texto */
+  }
+}
+.imagenes-home{
+  width: 90rem;
+  height: 90rem;
+}
+
+.carousel-caption{
+  bottom: 67.25rem;
+}
+
+/* Estilos para la imagen */
+.panes-image {
+  max-width: 100%;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3); /* Sombra */
+}
+
+/* Estilos para el contenido */
+.home-content {
+  p {
+    font-size: 1.2rem;
+    line-height: 1.5;
+    color: #333; /* Color del texto */
+  }
 }

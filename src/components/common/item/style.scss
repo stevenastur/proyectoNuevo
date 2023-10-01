@@ -2,6 +2,7 @@
   height: 100% !important;
   display: flex;
   flex-direction: row;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
 }
 
 .cuerpo-card {
@@ -68,6 +69,7 @@
 .precio:hover {
   cursor: pointer;
 }
+
 
 .addtoCart:hover {
   cursor: pointer;

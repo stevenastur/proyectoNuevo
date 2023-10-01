@@ -15,12 +15,12 @@ const Header = () => {
             </Navbar.Brand>
           </Col>
 
-          <Col xs={10}>
-            <NavLink className="link-header" to="/">
-              Home
-            </NavLink>
+          <Col xs={10} className="etiquetas">
             <NavLink className="link-header" to="/productos">
               Productos
+            </NavLink>
+            <NavLink className="link-header" to="/">
+              Home
             </NavLink>
           </Col>
 
