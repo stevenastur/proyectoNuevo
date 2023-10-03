@@ -39,12 +39,6 @@ const Home = () => {
               </Carousel.Caption>
             </Carousel.Item>
           </Carousel>
-
-          {/* <img
-            src={panes}
-            alt="Variedad de panes frescos"
-            className="panes-image"
-          /> */}
           <p>
             En la Panadería Delicioso Pan, nos enorgullece ofrecer una amplia
             selección de panes recién horneados. Desde baguettes crujientes
