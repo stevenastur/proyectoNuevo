@@ -62,7 +62,7 @@ const Footer = () => {
           </div>
           <div className="datos-navegacion">
             <Col className="imagen">
-              <Navbar.Brand href="/">
+              <Navbar.Brand href="/" className="brand-footer">
                 <Image className="imagen-footer" src={logo} roundedCircle />
                 <h1>Raíces italianas, </h1>
                 <h1>Manos Argentinas.</h1>

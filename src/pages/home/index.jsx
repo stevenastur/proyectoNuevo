@@ -1,44 +1,45 @@
-import { Carousel, Image } from "react-bootstrap";
+import { Carousel, Col, Image } from "react-bootstrap";
 import "./style.scss";
+import panUno from "../../assets/pan-uno.jpg";
 import panDos from "../../assets/pan-dos.jpg";
-import panTres from "../../assets/pan-uno.jpg";
-import panes from "../../assets/panes.jpg";
+import panTres from "../../assets/pan-tres.jpg";
 
 const Home = () => {
-
   return (
     <>
       <div className="home-container">
-        <header className="home-header">
-          <h1>Bienvenido a la Panadería Delicioso Pan</h1>
-        </header>
-        <section className="home-content">
-          <Carousel fade>
-            <Carousel.Item>
-              <Image className="imagenes-home" src={panDos} text="First slide" />
-              <Carousel.Caption className="nombre-carrusel">
+        <Carousel fade>
+          <Carousel.Item>
+            <Image className="imagenes-home" src={panUno} text="First slide" />
+            <Carousel.Caption className="nombre-carousel">
+              <div className="caption-content">
                 <h1>Cocinando con Bigotes</h1>
                 <p>Raíces italianas,Manos Argentinas.</p>
-              </Carousel.Caption>
-            </Carousel.Item>
-            <Carousel.Item>
-              <Image className="imagenes-home" src={panTres} text="Second slide" />
-              <Carousel.Caption>
-                <h3>Second slide label</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-              </Carousel.Caption>
-            </Carousel.Item>
-            <Carousel.Item>
-              <Image className="imagenes-home" src={panes} text="Third slide" />
-              <Carousel.Caption>
-                <h3>Third slide label</h3>
-                <p>
-                  Praesent commodo cursus magna, vel scelerisque nisl
-                  consectetur.
-                </p>
-              </Carousel.Caption>
-            </Carousel.Item>
-          </Carousel>
+              </div>
+            </Carousel.Caption>
+          </Carousel.Item>
+
+          <Carousel.Item>
+            <Image className="imagenes-home" src={panDos} text="Second slide" />
+            <Carousel.Caption className="nombre-carousel">
+              <div className="caption-content">
+                <h1>Cocinando con Bigotes</h1>
+                <p>Raíces italianas,Manos Argentinas.</p>
+              </div>
+            </Carousel.Caption>
+          </Carousel.Item>
+
+          <Carousel.Item>
+            <Image className="imagenes-home" src={panTres} text="Third slide" />
+            <Carousel.Caption className="nombre-carousel">
+              <div className="caption-content">
+                <h1>Cocinando con Bigotes</h1>
+                <p>Raíces italianas,Manos Argentinas.</p>
+              </div>
+            </Carousel.Caption>
+          </Carousel.Item>
+        </Carousel>
+        <section className="home-content">
           <p>
             En la Panadería Delicioso Pan, nos enorgullece ofrecer una amplia
             selección de panes recién horneados. Desde baguettes crujientes
