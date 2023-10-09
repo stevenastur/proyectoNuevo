@@ -1,0 +1,61 @@
+.tarjetaGrandeDetail {
+  padding: 12rem 0;
+  display: flex;
+  justify-content: center;
+  width: 70vw!important;
+}
+
+.tarjetaDetail {
+  display: grid;
+  grid-auto-rows: 2fr;
+  grid-template-columns: 2fr 3fr;
+  grid-template-areas: "imagenTarjeta InfoTarjeta";
+  grid-gap: 2rem;
+  justify-items: center;
+  align-items: center;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3); 
+  height: 80vh;
+}
+.cardcita{
+    width: 100%;
+}
+
+.imagenTarjeta {
+  height: 100%;;
+  display: flex;
+  align-items: center;
+}
+
+.imagenDetail {
+    max-width: 100%;
+    height: auto;
+    width: auto!important;
+    border-radius: 15px!important;
+}
+
+.InfoTarjeta {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  h2{
+    padding-bottom: 8rem;
+  }
+
+}
+
+.prevBoton{
+    display: flex;
+    justify-content: center;
+}
+
+.botonAgg{
+    display: flex;
+    justify-content: center;
+    width: 50%;
+    padding-bottom: 8rem;
+    .botton{
+    width: 80%!important;
+    }
+}

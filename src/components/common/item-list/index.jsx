@@ -4,9 +4,9 @@ import "./style.scss";
 
 const ItemList = ({ items }) => {
   return (
-    <div className="tarjetaGrande">
+    <div className="tarjetaGrandeList">
       {items.map((item) => (
-        <Col key={item.id} className="tarjeta">
+        <Col key={item.id} className="tarjetaList">
           <Item {...item} />
         </Col>
       ))}

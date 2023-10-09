@@ -41,12 +41,14 @@
 .card-img-top {
   width: 171px !important;
   height: 180px;
+  border-radius: 10px!important;
 }
 
 .imagen {
   display: flex;
   align-items: center;
   flex-direction: row;
+  
 }
 
 .precio {
