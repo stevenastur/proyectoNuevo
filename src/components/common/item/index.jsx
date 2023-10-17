@@ -12,20 +12,22 @@ const Item = ({ id, nombre, precio, verProducto, textButton, img }) => {
 
   const quantity = getQuantityById(id);
 
-  console.log(img);
 
   return (
     <>
       <Card key={id} className="tarjeta-individual">
         <Card.Body className="columna-card">
-          <Col className="imagen" sm={4} onClick={verProducto}>
+          <Row className="imagen" onClick={verProducto}>
             <Card.Img variant="top" src={img} alt="171x180" />
-          </Col>
-          <Col className="columna-card-agregar" sm={8}>
+          </Row>
+          <Row className="columna-card-agregar" >
             <div className="titulo-prod" onClick={verProducto}>
               <Card.Title>{nombre}</Card.Title>
             </div>
             <div className="precio-agregar">
+              <div>
+                <Card.Text className="precio" onClick={verProducto}>$ {precio}</Card.Text>
+              </div>
               <div>
                 <AddToCartButton
                   product={{ id, nombre, precio }}
@@ -33,24 +35,11 @@ const Item = ({ id, nombre, precio, verProducto, textButton, img }) => {
                   removerItem={removerItem}
                   getQuantityById={getQuantityById}
                   quantity={quantity}
-                  onClick={verProducto}
                   className= "addtoCart"
                 />
               </div>
-              <div>
-                <Card.Text className="precio" onClick={verProducto}>$ {precio}</Card.Text>
-              </div>
             </div>
-          </Col>
-          {/* <Row>
-              <Button
-                variant="secondary"
-                onClick={verProducto}
-                className="boton-ver"
-              >
-                {textButton}
-              </Button>
-            </Row> */}
+          </Row>
         </Card.Body>
       </Card>
     </>

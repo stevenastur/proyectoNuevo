@@ -1,8 +1,4 @@
-$color-principal: #ffffff;
-$color-letra: #000000;
-$button-size: 40px;
-$color-imagen-rojo: #700d14;
-$color-fondo-crema: #f8eee4;
+@import '../../variables.scss';
 
 .link-footer {
   color: $color-fondo-crema;
@@ -12,10 +8,6 @@ $color-fondo-crema: #f8eee4;
   margin: 0 6px;
 }
 
-.rounded-circle {
-  height: 4rem;
-  border: 2px solid black;
-}
 
 .contenedor-footer {
   display: flex;
@@ -98,12 +90,12 @@ $color-fondo-crema: #f8eee4;
 
 .datos-navegacion{
   margin-top: 2rem;
-  display: grid;
-  grid-auto-rows: auto;
-  grid-gap: 1rem;
-  grid-template-columns: 2fr 3fr 2fr;
-  grid-template-rows: 2fr;
-  grid-template-areas: "imagen navegacion";
+  // display: grid;
+  // grid-auto-rows: auto;
+  // grid-gap: 1rem;
+  // grid-template-columns: 2fr 3fr 2fr;
+  // grid-template-rows: 2fr;
+  // grid-template-areas: "imagen navegacion";
   width: 100%;
 }
 

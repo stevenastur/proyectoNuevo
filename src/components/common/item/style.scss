@@ -1,8 +1,28 @@
+@import "../../variables.scss";
+
 .tarjeta-individual {
-  height: 100% !important;
-  display: flex;
-  flex-direction: row;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+  height: 27rem !important;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.13);
+}
+.tarjeta-individual:hover {
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4);
+  animation: pulse 0.5s 1;
+  transform: scale(1.07);
+}
+
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.07);
+  }
+}
+
+
+.imagen{
+  width: 100%;
 }
 
 .cuerpo-card {
@@ -10,8 +30,8 @@
   display: grid;
   grid-auto-rows: auto;
   grid-gap: 1rem;
-  grid-template-columns: 2fr 2fr;
-  grid-template-rows: 3fr 3fr;
+  grid-template-columns: 2fr;
+  grid-template-rows: 4fr 4fr;
   grid-template-areas:
     "imagen columna-card"
     "imagen columna-card-agregar";
@@ -21,34 +41,30 @@
 }
 
 .columna-card {
+  padding: 0px!important;
   display: flex;
-  flex-direction: row;
-  padding-bottom: 0;
-  padding-top: 0;
-}
-.boton-ver {
-  margin: 0 2rem;
+  flex-direction: column;
+  align-items: center;
 }
 
 .columna-card-agregar {
-  padding-bottom: 0;
-  padding-top: 0;
+  width: 100%;
+  padding: 0px;
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  padding: 0.4rem;
 }
 
 .card-img-top {
-  width: 171px !important;
-  height: 180px;
-  border-radius: 10px!important;
+  height: 20rem;
+  padding: 0px!important;
+  border-radius: 7px;
 }
 
-.imagen {
-  display: flex;
-  align-items: center;
-  flex-direction: row;
-  
+.boton-ver {
+  margin: 0 2rem;
 }
 
 .precio {
@@ -58,10 +74,12 @@
 .precio-agregar {
   display: flex;
   justify-content: space-between;
+  padding: 0.6rem;
+  padding-right: 0.9rem;
 }
 .titulo-prod {
   display: flex;
-  justify-content: flex-start!important;
+  justify-content: flex-start !important;
 }
 
 .imagen:hover {
@@ -71,7 +89,6 @@
 .precio:hover {
   cursor: pointer;
 }
-
 
 .addtoCart:hover {
   cursor: pointer;

@@ -1,16 +1,22 @@
-$color-principal: #ffffff;
-$color-letra: #000000;
-$button-size: 40px;
-$color-imagen-rojo: #700d14;
-$color-fondo-crema: #f8eee4;
+@import '../../variables.scss';
 
 .categoria{
     margin: 13px;
     color: $color-letra;
 }
 
-
 .nombre-filtro{
     color: $color-principal;
     padding: 2px 10px!important;
+}
+
+.active-link {
+    color: $color-letra!important;
+    background-color: $color-fondo-crema!important;
+    border-bottom: 1px solid $color-fondo-crema!important;
+  }
+
+.rest{
+    color: $color-letra!important;
+    
 }

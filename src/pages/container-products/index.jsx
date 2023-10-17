@@ -1,4 +1,4 @@
-import { Col, Container } from "react-bootstrap";
+import { Col, Container, Spinner } from "react-bootstrap";
 import { getProds } from "../../firestore/productos";
 import { useNavigate, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
@@ -17,12 +17,20 @@ const ContainerProducts = () => {
 
   const [prods, setProds] = useState([]);
 
+  const [cargando, setCargando] = useState(true);
+
   const { addToCart, removerItem, getQuantityById } = useCart();
 
   useEffect(() => {
-    getProds(nombreFiltrado).then((data) => {
-      setProds(data);
-    });
+    getProds(nombreFiltrado)
+      .then((data) => {
+        setProds(data);
+        setCargando(false);
+      })
+      .catch((error) => {
+        console.error("Error al cargar datos:", error);
+        setCargando(false); // En caso de error, asegúrate de que isLoading sea false
+      });
   }, [nombreFiltrado]);
 
   const filtrado = filterProducts(prods);
@@ -37,21 +45,27 @@ const ContainerProducts = () => {
           <FiltroProductos />
         </Col>
         <Col>
-          <ItemList
-            items={filtrado.map((prod) => ({
-              ...prod,
-              verProducto: () => navigate(`/item-detail/${prod.id}`),
-              textButton: "Ver",
-              AddToCartButton: (
-                <AddToCartButton
-                  product={prod}
-                  addToCart={addToCart}
-                  removerItem={removerItem}
-                  getQuantityById={getQuantityById}
-                />
-              ),
-            }))}
-          />
+          {cargando ? (
+            <div className="cargando">
+              <Spinner animation="border" />
+            </div>
+          ) : (
+            <ItemList
+              items={filtrado.map((prod) => ({
+                ...prod,
+                verProducto: () => navigate(`/item-detail/${prod.id}`),
+                textButton: "Ver",
+                AddToCartButton: (
+                  <AddToCartButton
+                    product={prod}
+                    addToCart={addToCart}
+                    removerItem={removerItem}
+                    getQuantityById={getQuantityById}
+                  />
+                ),
+              }))}
+            />
+          )}
         </Col>
       </Container>
     </>

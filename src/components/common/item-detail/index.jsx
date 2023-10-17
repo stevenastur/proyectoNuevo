@@ -32,9 +32,17 @@ const ItemDetail = ({ product }) => {
               <h1>{product.nombre}</h1>
             </Card.Title>
             <Card.Text>
-              <h2>$ {product.precio}</h2>
+              <h3>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                Quibusdam corrupti optio architecto culpa maiores assumenda
+                dolore, dolores accusantium quam, sed error. Ratione debitis
+                laudantium maiores quod nobis unde provident fugit!
+              </h3>
             </Card.Text>
             <div className="prevBoton">
+              <Card.Text>
+                <div><h3>$ {product.precio}</h3></div>
+              </Card.Text>
               <div className="botonAgg">
                 <AddToCartButton
                   product={product}
@@ -45,9 +53,6 @@ const ItemDetail = ({ product }) => {
                 />
               </div>
             </div>
-            <Card.Text>
-              <h3> {product.descripción} </h3>
-            </Card.Text>
           </div>
         </Card.Body>
       </Card>

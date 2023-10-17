@@ -2,7 +2,7 @@ import { Col, Container, Image, Nav, Navbar } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
 import "./style.scss";
 import { CarritoCompras } from "../../common/carrito";
-import logo from "../../../assets/logo.jpg";
+import logo from "../../../assets/logoMejorado.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faCreditCard,
@@ -62,13 +62,13 @@ const Footer = () => {
           </div>
           <div className="datos-navegacion">
             <Col className="imagen">
-              <Navbar.Brand href="/" className="brand-footer">
+              <Navbar.Brand className="brand-footer">
                 <Image className="imagen-footer" src={logo} roundedCircle />
                 <h1>Raíces italianas, </h1>
                 <h1>Manos Argentinas.</h1>
               </Navbar.Brand>
             </Col>
-            <Col className="navegacion">
+            {/* <Col className="navegacion">
               <h1>Navegacion</h1>
               <NavLink className="link-footer" to="/">
                 <p>Inicio</p>
@@ -77,7 +77,7 @@ const Footer = () => {
                 <p>Productos</p>
               </NavLink>
             </Col>
-            <Col></Col>
+            <Col></Col> */}
           </div>
         </Container>
       </Navbar>

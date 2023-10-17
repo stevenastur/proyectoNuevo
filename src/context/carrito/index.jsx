@@ -5,33 +5,6 @@ const CartContext = createContext();
 const CartProvider = ({ children }) => {
   const [cart, setCart] = useState([]);
 
-  //   useEffect(() => {
-  //     const storedCart = localStorage.getItem("cart");
-  //     if (storedCart) {
-  //       setCart(JSON.parse(storedCart));
-  //     }
-  //   }, []);
-
-  //   useEffect(() => {
-  //     localStorage.setItem("cart", JSON.stringify(cart));
-  // }, [cart]);
-
-  //   useEffect(() => {
-  //     const handleStorageChange = (event) => {
-  //       if (event.key === "cart") {
-  //         const updatedCart = event.newValue ? JSON.parse(event.newValue) : [];
-  //         setCart(updatedCart);
-  //       }
-  //     };
-
-  //     window.addEventListener("storage", handleStorageChange);
-
-  //     return () => {
-  //       window.removeEventListener("storage", handleStorageChange);
-  //     };
-  //   }, []);
-
-  // Función para cargar el carrito desde localStorage
   const loadCartFromLocalStorage = () => {
     const storedCart = localStorage.getItem("cart");
     if (storedCart) {
@@ -39,14 +12,10 @@ const CartProvider = ({ children }) => {
     }
   };
 
-  // Llama a la función para cargar el carrito cuando se monta el componente
   useEffect(() => {
     loadCartFromLocalStorage();
   }, []);
 
-  // ...
-
-  // Utiliza el evento beforeunload para guardar el carrito en localStorage antes de refrescar la página o cerrarla
   useEffect(() => {
     const handleBeforeUnload = () => {
       localStorage.setItem("cart", JSON.stringify(cart));
@@ -58,10 +27,6 @@ const CartProvider = ({ children }) => {
       window.removeEventListener("beforeunload", handleBeforeUnload);
     };
   }, [cart]);
-
-
-
-  
 
   const addToCart = (product) => {
     setCart((currentCart) => {

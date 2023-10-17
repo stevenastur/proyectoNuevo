@@ -2,14 +2,14 @@ import { useContext, useId, useState } from "react";
 import "./style.scss";
 import { CartContext } from "../../../context/carrito";
 import { Button, Card, Modal, Offcanvas } from "react-bootstrap";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
-
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
+import { AddToCartButton } from "../boton/add-to-card";
 
 const CarritoCompras = () => {
   const carritoId = useId();
 
-  const { cart, setCart } = useContext(CartContext);
+  const { cart, setCart, getQuantityById, addToCart, removerItem } = useContext(CartContext);
   const [showModal, setShowModal] = useState(false);
   const [montoTotal, setMontoTotal] = useState(0);
 
@@ -41,18 +41,18 @@ const CarritoCompras = () => {
     const pedido = cart.map((item) => {
       return `${item.nombre} (${item.quantity} unidades) - monto: $${
         item.quantity * item.precio
-      }`
-    })
+      }`;
+    });
 
-    const pedidoTexto = pedido.join("\n")
+    const pedidoTexto = pedido.join("\n");
 
-    const pedidoMessage = `¡Hola! Mi pedido es el siguiente:\n${pedidoTexto} \n\nMonto total del pedido: $${montoTotal}`
+    const pedidoMessage = `¡Hola! Mi pedido es el siguiente:\n${pedidoTexto} \n\nMonto total del pedido: $${montoTotal}`;
 
     const whatsappLink = `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${encodeURIComponent(
       pedidoMessage
-    )}`
+    )}`;
 
-    window.open(whatsappLink, "_blank")
+    window.open(whatsappLink, "_blank");
 
     setCart([]);
 
@@ -60,18 +60,41 @@ const CarritoCompras = () => {
       (acc, curr) => acc + curr.quantity * curr.precio,
       0
     );
-    setMontoTotal(total)
+    setMontoTotal(total);
 
-    setShowModal(true)
+    setShowModal(true);
   };
   const closeModal = () => {
-    setShowModal(false)
+    setShowModal(false);
+  };
+
+  const limpiarCarrito = () => {
+    setCart([]);
+  };
+
+  const renderCartItem = (item) => {
+    return (
+      <Card key={item.id} className="mb-2">
+        <Card.Body>
+          <Card.Img variant="top" src={item.img} alt="171x180" />
+          <Card.Title>{item.nombre}</Card.Title>
+          <Card.Text>Cantidad: {item.quantity}</Card.Text>
+          <Card.Text>Precio: ${item.precio}</Card.Text>
+          <AddToCartButton
+            product={item}
+            addToCart={addToCart}
+            removerItem={removerItem}
+            quantity={getQuantityById(item.id)}
+          />
+        </Card.Body>
+      </Card>
+    );
   };
 
   return (
     <>
       <label htmlFor={carritoId} className="cart-button" onClick={handleShow}>
-      <FontAwesomeIcon icon={faShoppingCart} style={{ color: "#f8eee4" }} />
+        <FontAwesomeIcon icon={faShoppingCart} className="iconoCarrito" />
       </label>
       <input id={carritoId} type="checkbox" hidden />
 
@@ -92,47 +115,57 @@ const CarritoCompras = () => {
               </Modal.Footer>
             </Modal>
             <>
-              <Offcanvas show={show} onHide={handleClose} className="offcanvas-right" placement="end">
+              <Offcanvas
+                show={show}
+                onHide={handleClose}
+                className="offcanvas-right"
+                placement="end"
+              >
                 <Offcanvas.Header closeButton>
                   <Offcanvas.Title>Tu pedido ({quantity}) </Offcanvas.Title>
                 </Offcanvas.Header>
-                <Offcanvas.Body>
+                <Offcanvas.Body className="cuerpoCarrito">
                   <div className="general">
                     <div>
-                      <Card>
+                      <div className="botones">
+                        <a
+                          href={whatsappLink}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          <Button
+                            variant="outline-dark"
+                            onClick={finalizarCompra}
+                            className="botonComprar"
+                          >
+                            Iniciar compra
+                          </Button>
+                        </a>
+                        <Button variant="outline-dark" className="botonLimpiar" onClick={limpiarCarrito}>
+                          Limpiar
+                        </Button>
+                      </div>
                       {cart && cart.length === 0 ? (
+                        <Card>
                         <p className="letra">El carrito está vacío.</p>
-                      ) : (
-                        cart.map((item) => (
-                          <div key={item.id}>
-                            <span>
-                              {item.nombre} {item.marca}
-                            </span>
-                            <span className="letra">{item.quantity}</span>
-                            <span className="letra"> ${item.precio}</span>
-                          </div>
-                        ))
-                        )}
                         </Card>
+                      ) : (
+                        cart.map((item) => renderCartItem(item))
+                      )}
                     </div>
                   </div>
-                  <div className="letra">Total estimado</div>
-                  <div>${totalPrecio}</div>
-                  <a
-                    href={whatsappLink}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    >
-                    <Button onClick={finalizarCompra}>Iniciar compra</Button>
-                  </a>
-                    </Offcanvas.Body>
+                  <div className="carroFooter">
+                    <div className="letra">Total estimado</div>
+                    <div>${totalPrecio}</div>
+                  </div>
+                </Offcanvas.Body>
               </Offcanvas>
             </>
           </li>
         </ul>
       </aside>
     </>
-  )
-}
+  );
+};
 
 export { CarritoCompras };

@@ -1,8 +1,4 @@
-$color-principal: #ffffff;
-$color-letra: #000000;
-$button-size: 40px;
-$color-imagen-rojo: #700d14;
-$color-fondo-crema: #f8eee4;
+@import '../../components/variables.scss';
 
 .color-fondo{
     background-color: $color-fondo-crema;
@@ -13,5 +9,12 @@ $color-fondo-crema: #f8eee4;
     color: $color-letra;
     display: flex;
     justify-content: center;
-    padding-top: 18rem;
+    padding-top: 2rem;
+}
+
+.cargando{
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
