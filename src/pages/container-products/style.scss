@@ -1,8 +1,25 @@
 @import '../../components/variables.scss';
 
-.color-fondo{
-    background-color: $color-fondo-crema;
+.mapa{
+    display: grid;
+    grid-auto-rows: auto;
+    grid-template-columns: 1fr 10fr 1fr;
+    grid-template-rows: 1fr auto;
+    grid-template-areas:
+      "blancoUno menu blancoDos"
+      "blancoUnoBajo color-fondo-contenedor blancoDosBajo";
+    padding-bottom: 0;
+    padding-top: 0;
     height: auto;
+}
+
+.color-fondo-contenedor{
+    background-color: $color-principal;
+    height: auto;
+    grid-area: color-fondo-contenedor;
+}
+.menu{
+    grid-area:menu;
 }
 
 .titulo{
@@ -10,6 +27,20 @@
     display: flex;
     justify-content: center;
     padding-top: 2rem;
+}
+.blancoUnoBajo{
+    grid-area: blancoUnoBajo;
+    background-color: $color-fondo-crema ;
+}
+.blancoDosBajo{
+    grid-area: blancoDosBajo;
+    background-color: $color-fondo-crema ;
+}
+.blancoUno{
+    grid-area: blancoUno;
+}
+.blancoDos{
+    grid-area: blancoDos;
 }
 
 .cargando{

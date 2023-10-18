@@ -68,16 +68,6 @@ const Footer = () => {
                 <h1>Manos Argentinas.</h1>
               </Navbar.Brand>
             </Col>
-            {/* <Col className="navegacion">
-              <h1>Navegacion</h1>
-              <NavLink className="link-footer" to="/">
-                <p>Inicio</p>
-              </NavLink>
-              <NavLink className="link-footer" to="/productos">
-                <p>Productos</p>
-              </NavLink>
-            </Col>
-            <Col></Col> */}
           </div>
         </Container>
       </Navbar>

@@ -1,4 +1,4 @@
-import { Col, Container, Spinner } from "react-bootstrap";
+import { Col, Row, Container, Spinner } from "react-bootstrap";
 import { getProds } from "../../firestore/productos";
 import { useNavigate, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
@@ -38,13 +38,15 @@ const ContainerProducts = () => {
   const product = filtrado.length > 0 ? filtrado[0] : null;
 
   return (
-    <>
-      <Container className="color-fondo">
+    <div className="mapa">
+      <div className="blancoUno"></div>
+      <div className="blancoUnoBajo"></div>
+      <div className="menu">
         <h1 className="titulo">Nuestro Menú</h1>
-        <Col>
-          <FiltroProductos />
-        </Col>
-        <Col>
+        <FiltroProductos />
+      </div>
+      <div className="color-fondo-contenedor">
+        <div>
           {cargando ? (
             <div className="cargando">
               <Spinner animation="border" />
@@ -66,9 +68,11 @@ const ContainerProducts = () => {
               }))}
             />
           )}
-        </Col>
-      </Container>
-    </>
+        </div>
+      </div>
+      <div className="blancoDosBajo"></div>
+      <div className="blancoDos"></div>
+    </div>
   );
 };
 

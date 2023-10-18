@@ -90,12 +90,6 @@
 
 .datos-navegacion{
   margin-top: 2rem;
-  // display: grid;
-  // grid-auto-rows: auto;
-  // grid-gap: 1rem;
-  // grid-template-columns: 2fr 3fr 2fr;
-  // grid-template-rows: 2fr;
-  // grid-template-areas: "imagen navegacion";
   width: 100%;
 }
 
@@ -107,6 +101,8 @@
 .imagen-footer{
   width: 7rem;
   height: 7rem;
+  display: flex;
+  justify-content: center;
 }
 
 .imagen h1{
@@ -118,4 +114,5 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin: 0px!important;
 }

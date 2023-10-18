@@ -76,7 +76,6 @@ const CarritoCompras = () => {
     return (
       <Card key={item.id} className="mb-2">
         <Card.Body>
-          <Card.Img variant="top" src={item.img} alt="171x180" />
           <Card.Title>{item.nombre}</Card.Title>
           <Card.Text>Cantidad: {item.quantity}</Card.Text>
           <Card.Text>Precio: ${item.precio}</Card.Text>
