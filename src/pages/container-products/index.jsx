@@ -38,9 +38,7 @@ const ContainerProducts = () => {
   const product = filtrado.length > 0 ? filtrado[0] : null;
 
   return (
-    <div className="mapa">
-      <div className="blancoUno"></div>
-      <div className="blancoUnoBajo"></div>
+    <Container fluid className="mapa">
       <div className="menu">
         <h1 className="titulo">Nuestro Menú</h1>
         <FiltroProductos />
@@ -70,9 +68,7 @@ const ContainerProducts = () => {
           )}
         </div>
       </div>
-      <div className="blancoDosBajo"></div>
-      <div className="blancoDos"></div>
-    </div>
+    </Container>
   );
 };
 

@@ -23,7 +23,7 @@ const FiltroProductos = () => {
   };
 
   return (
-    <div>
+    <div className="filtroPadre">
       <Nav
         className="catFiltro"
         justify
