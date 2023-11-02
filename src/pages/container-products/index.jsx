@@ -29,7 +29,7 @@ const ContainerProducts = () => {
       })
       .catch((error) => {
         console.error("Error al cargar datos:", error);
-        setCargando(false); // En caso de error, asegúrate de que isLoading sea false
+        setCargando(false);
       });
   }, [nombreFiltrado]);
 

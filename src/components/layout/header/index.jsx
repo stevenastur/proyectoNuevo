@@ -6,30 +6,27 @@ import logo from "../../../assets/logoMejorado.png";
 import { useEffect, useState } from "react";
 
 const Header = () => {
-  const [navbarTransparent, setNavbarTransparent] = useState(true);
+  // const [navbarTransparent, setNavbarTransparent] = useState(true);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 100) {
-        setNavbarTransparent(false);
-      } else {
-        setNavbarTransparent(true);
-      }
-    };
+  // useEffect(() => {
+  //   const handleScroll = () => {
+  //     if (window.scrollY > 100) {
+  //       setNavbarTransparent(false);
+  //     } else {
+  //       setNavbarTransparent(true);
+  //     }
+  //   };
 
-    window.addEventListener("scroll", handleScroll);
+  //   window.addEventListener("scroll", handleScroll);
 
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
+  //   return () => {
+  //     window.removeEventListener("scroll", handleScroll);
+  //   };
+  // }, []);
 
   return (
     <>
-      <Navbar
-        className= "header"
-        expand="lg"
-      >
+      <Navbar className="header" expand="lg">
         <Container>
           <Col xs={1}>
             <div className="brand-header">
