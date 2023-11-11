@@ -1,13 +1,6 @@
 @import "../../components/variables.scss";
 
 .mapa {
-  //   display: grid;
-  //   grid-auto-rows: auto;
-  //   grid-template-columns: 1fr;
-  //   grid-template-rows: 1fr;
-  //   grid-template-areas:
-  //     "menu"
-  //     "color-fondo-contenedor";
   display: flex;
   flex-direction: column;
   height: auto;

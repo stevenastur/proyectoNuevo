@@ -1,21 +1,36 @@
-@import '../../variables.scss';
+@import "../../variables.scss";
 
-.tarjetaGrandeList{
-    padding-top: 3rem;
-    padding-bottom: 5rem;
-    padding-left: 13rem;
-    padding-right: 13rem;
+.tarjetaGrandeList {
+  padding-top: 3rem;
+  padding-bottom: 5rem;
+  padding-left: 7%;
+  padding-right: 7%;
+  display: grid;
+  grid-auto-rows: auto;
+  grid-template-columns: 2fr 2fr 2fr;
+  grid-gap: 2%;
+  border-radius: 0 0 7px 7px;
+  background-color: $color-fondo-crema;
+}
+
+.tarjetaList {
+  margin: 3% 5%;
+  height: 100%;
+}
+
+@media (max-width: 1200px) {
+  .tarjetaGrandeList {
     display: grid;
     grid-auto-rows: auto;
     grid-gap: 1rem;
-    grid-template-columns: 2fr 2fr 2fr;
+    grid-template-columns: 2fr 2fr;
     grid-gap: 2rem;
     border-radius: 0 0 7px 7px;
-    background-color: $color-fondo-crema;
+  }
 }
 
+@media (max-width: 1510px){
+    .tarjetaGrandeList {
 
-.tarjetaList{
-    margin: 1rem 3rem;
-    height: 100%;
+      }
 }
