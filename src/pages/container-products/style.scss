@@ -10,11 +10,8 @@
 .color-fondo-contenedor {
   background-color: $color-principal;
   height: auto;
-  grid-area: color-fondo-contenedor;
 }
-.menu {
-  grid-area: menu;
-}
+
 
 .titulo {
   color: $color-letra;
@@ -28,5 +25,5 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: $color-fondo-crema;
+  background-color: $color-principal;
 }
