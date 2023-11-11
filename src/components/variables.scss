@@ -2,11 +2,13 @@ $color-principal: #ffffff;
 $color-letra: #000000;
 $button-size: 40px;
 $color-imagen-rojo: #700d14;
-$color-fondo-crema: #fcf8f5;
+$color-fondo-crema: #f4ede6;
+$color-imagen-oscuro: #1c0a08;
+$color-fondo-secundario: #e03c0a;
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Bitter', serif;
-  }
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Bitter", serif;
+}

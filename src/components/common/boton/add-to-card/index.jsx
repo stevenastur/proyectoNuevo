@@ -16,14 +16,14 @@ const AddToCartButton = ({ product, addToCart, removerItem, getQuantityById, qua
   return (
     <>
       {quantity === 0 ? (
-        <Button variant="outline-dark" className="botton" onClick={onAdd}>
+        <Button  className="bottonAgregarAlCarro" onClick={onAdd}>
           <FontAwesomeIcon icon={faShoppingCart} style={{ color: "#700d14" }} /> Agregar
         </Button>
       ) : (
         <>
-          <Button variant="outline-dark" className="botton botton-chico-uno" onClick={onLess}> - </Button>
-          {quantity}
-          <Button variant="outline-dark" className="botton botton-chico-uno" onClick={onAdd}> + </Button>
+          <Button  className="botton botton-chico-menos" onClick={onLess}> - </Button>
+          <div className="cantidadEnProd">{quantity}</div>
+          <Button  className="botton botton-chico-mas" onClick={onAdd}> + </Button>
         </>
       )}
     </>
