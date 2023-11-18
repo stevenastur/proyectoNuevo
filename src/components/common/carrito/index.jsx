@@ -48,6 +48,8 @@ const CarritoCompras = () => {
     if (quantity === 1 && !primerProductoAgregado) {
       setShow(true); 
       setPrimerProductoAgregado(true)
+    } if (quantity === 0) {
+      setPrimerProductoAgregado(false)
     }
   }, [cart]);
 
