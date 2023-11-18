@@ -4,7 +4,7 @@ import "./style.scss";
 import { AddToCartButton } from "../boton/add-to-card";
 import clasico from "../../../assets/chipaClasico.jpg"
 
-const Item = ({ id, nombre, precio, verProducto, textButton, img }) => {
+const Item = ({ id, nombre, precio, verProducto, textButton, img, descripción }) => {
   const { addToCart, cart, removerItem, getQuantityById } = useCart();
 
   const checkProdInCart = (prod) => {
@@ -24,6 +24,9 @@ const Item = ({ id, nombre, precio, verProducto, textButton, img }) => {
           <Row className="columna-card-agregar" >
             <div className="titulo-prod" onClick={verProducto}>
               <Card.Title>{nombre}</Card.Title>
+            </div>
+            <div className="descripcion-prod" onClick={verProducto}>
+              <Card.Text>{descripción}</Card.Text>
             </div>
             <div className="precio-agregar">
               <div className="cuerpoPrecioTarj">

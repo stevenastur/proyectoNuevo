@@ -16,8 +16,12 @@ const getProds = async (nombreFiltrado) => {
   const q = nombreFiltrado
     ? query(colleccionRef, where("nombre", "==", nombreFiltrado))
     : colleccionRef;
-
   const snapshot = await getDocs(q);
+
+  if (snapshot.empty) {
+    console.log('No se encontraron documentos.');
+    return [];
+  }
 
   return snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
 };

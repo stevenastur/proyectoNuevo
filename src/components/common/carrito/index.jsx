@@ -1,4 +1,4 @@
-import { useContext, useId, useState } from "react";
+import { useContext, useEffect, useId, useState } from "react";
 import "./style.scss";
 import { CartContext } from "../../../context/carrito";
 import { Button, Card, Modal, Offcanvas } from "react-bootstrap";
@@ -25,6 +25,8 @@ const CarritoCompras = () => {
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+  
+  const [primerProductoAgregado, setPrimerProductoAgregado] = useState(false);
 
   const quantity = cart
     ? cart.reduce((acc, curr) => acc + curr.quantity, 0)
@@ -39,6 +41,15 @@ const CarritoCompras = () => {
   const whatsappLink = `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${encodeURIComponent(
     message
   )}`;
+
+
+
+  useEffect(() => {
+    if (quantity === 1 && !primerProductoAgregado) {
+      setShow(true); 
+      setPrimerProductoAgregado(true)
+    }
+  }, [cart]);
 
 
   const finalizarCompra = () => {
@@ -95,12 +106,14 @@ const CarritoCompras = () => {
           <Card.Title>{item.nombre}</Card.Title>
           <Card.Text>Cantidad: {item.quantity}</Card.Text>
           <Card.Text>Precio: ${item.precio}</Card.Text>
-          <AddToCartButton
-            product={item}
-            addToCart={addToCart}
-            removerItem={removerItem}
-            quantity={getQuantityById(item.id)}
-          />
+          <div className="cuerpoBotonCarrito">
+            <AddToCartButton
+              product={item}
+              addToCart={addToCart}
+              removerItem={removerItem}
+              quantity={getQuantityById(item.id)}
+            />
+          </div>
         </Card.Body>
       </Card>
     );
@@ -153,7 +166,11 @@ const CarritoCompras = () => {
               <div className="general">
                 <div>
                   <div className="botones">
-                    <a target="_blank" rel="noopener noreferrer" className="inciarCompraBoton">
+                    <a
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inciarCompraBoton"
+                    >
                       <Button
                         variant="outline-dark"
                         onClick={finalizarCompra}

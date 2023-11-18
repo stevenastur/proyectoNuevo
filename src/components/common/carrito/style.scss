@@ -37,6 +37,51 @@
   }
 }
 
+.cuerpoBotonCarrito {
+  width: 6rem !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .bottonAgregarAlCarro {
+    background-color: $color-fondo-crema !important;
+    color: $color-imagen-oscuro;
+    font-weight: bold;
+    border: none;
+    border-radius: 100rem;
+    width: 100%;
+    height: 100%;
+  }
+  .cantidadEnProd {
+    color: $color-imagen-oscuro;
+    font-size: 1rem !important;
+    padding: 0rem 0.5rem;
+  }
+  .botton-chico-menos {
+    background-color: $color-imagen-oscuro !important;
+    color: $color-fondo-crema;
+    font-weight: bold;
+    border: none;
+    border-radius: 100rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+    height: 80%;
+  }
+  .botton-chico-mas {
+    background-color: $color-imagen-oscuro !important;
+    color: $color-fondo-crema;
+    font-weight: bold;
+    border: none;
+    border-radius: 100rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+    height: 80%;
+  }
+}
+
 .menuCarrito.show {
   transform: translateX(0);
 }

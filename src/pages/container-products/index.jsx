@@ -68,7 +68,7 @@ const ContainerProducts = () => {
       <Container fluid className="mapa">
         <div className="menu">
           <h1 className="titulo">Nuestro Menú</h1>
-          <FiltroProductos />
+          {/* <FiltroProductos /> */}
         </div>
         <div className="color-fondo-contenedor">
           <div>
