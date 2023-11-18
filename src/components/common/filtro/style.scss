@@ -1,26 +1,30 @@
 @import '../../variables.scss';
 
 
-.filtroPadre{
+.filtroPadre {
+    display: flex;
+    gap: 10px;
     padding: 0 5rem;
-
-    .categoria{
-        margin: 13px;
+    justify-content: space-evenly;
+  
+    .nombre-filtro {
+      border-radius: 20px; // Ajusta según sea necesario
+      padding: 8px 16px; // Ajusta según sea necesario
+      color: $color-principal;
+      background-color: $color-imagen-oscuro; // Color de fondo predeterminado
+      border: 1px solid $color-principal;
+  
+      &:hover,
+      &:focus {
         color: $color-letra;
-    }
-    
-    .nombre-filtro{
-        color: $color-principal;
-        padding: 2px 10px!important;
-    }
-    
-    .active-link {
-        color: $color-letra!important;
+        background-color: $color-principal; // Cambia el color al pasar el ratón por encima
+        border: 1px solid $color-letra;
       }
-    
-    .rest{
-        color: $color-letra!important;
-        
     }
-
-}
+  
+    .active-link {
+      color: $color-letra !important;
+      background-color: $color-principal; // Color de fondo cuando está activo
+      border: 1px solid $color-letra;
+    }
+  }

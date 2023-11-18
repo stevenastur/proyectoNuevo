@@ -5,25 +5,27 @@
   flex-direction: column;
   height: auto;
   padding: 0px!important;
+  
+  .titulo {
+    color: $color-letra;
+    display: flex;
+    justify-content: center;
+    padding: 3rem 0rem ;
+    font-family: 'Lobster Two', sans-serif;
+    
+  }
+  
+  .color-fondo-contenedor {
+    background-color: $color-principal;
+    height: auto;
+    .cargando {
+      height: 70vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: $color-principal;
+    }
+  }
 }
 
-.color-fondo-contenedor {
-  background-color: $color-principal;
-  height: auto;
-}
 
-
-.titulo {
-  color: $color-letra;
-  display: flex;
-  justify-content: center;
-  padding-top: 2rem;
-}
-
-.cargando {
-  height: 70vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: $color-principal;
-}

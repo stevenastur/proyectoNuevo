@@ -1,4 +1,4 @@
-import { Col, Row, Container, Spinner } from "react-bootstrap";
+import { Col, Row, Container, Spinner, Modal, Button } from "react-bootstrap";
 import { getProds } from "../../firestore/productos";
 import { useNavigate, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
@@ -15,11 +15,18 @@ const ContainerProducts = () => {
 
   const { filters, filterProducts } = useFilters();
 
+  const [producto, setProducto] = useState({});
+
   const [prods, setProds] = useState([]);
 
   const [cargando, setCargando] = useState(true);
 
   const { addToCart, removerItem, getQuantityById } = useCart();
+
+  const [showModalProd, setshowModalProd] = useState(false);
+
+  const handleClose = () => setshowModalProd(false);
+  const handleShow = () => setshowModalProd(true);
 
   useEffect(() => {
     getProds(nombreFiltrado)
@@ -33,42 +40,64 @@ const ContainerProducts = () => {
       });
   }, [nombreFiltrado]);
 
+  const abrirPop = (prods) => {
+    console.log(prods);
+    setProducto(prods);
+    setshowModalProd(true);
+  };
+
   const filtrado = filterProducts(prods);
 
   const product = filtrado.length > 0 ? filtrado[0] : null;
 
   return (
-    <Container fluid className="mapa">
-      <div className="menu">
-        <h1 className="titulo">Nuestro Menú</h1>
-        <FiltroProductos />
-      </div>
-      <div className="color-fondo-contenedor">
-        <div>
-          {cargando ? (
-            <div className="cargando">
-              <Spinner animation="border" />
-            </div>
-          ) : (
-            <ItemList
-              items={filtrado.map((prod) => ({
-                ...prod,
-                verProducto: () => navigate(`/item-detail/${prod.id}`),
-                textButton: "Ver",
-                AddToCartButton: (
-                  <AddToCartButton
-                    product={prod}
-                    addToCart={addToCart}
-                    removerItem={removerItem}
-                    getQuantityById={getQuantityById}
-                  />
-                ),
-              }))}
-            />
-          )}
+    <>
+    {prods.map((prod) => (
+      <Modal key={prod.id} show={showModalProd} onHide={handleClose}>
+        <Modal.Header handleClose>
+          <Modal.Title>{prod.nombre}</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>$ {prod.precio}</Modal.Body>
+        <Modal.Footer>
+          <Button variant="primary" onClick={handleClose}>
+            Cerrar
+          </Button>
+        </Modal.Footer>
+      </Modal>))}
+
+      <Container fluid className="mapa">
+        <div className="menu">
+          <h1 className="titulo">Nuestro Menú</h1>
+          <FiltroProductos />
         </div>
-      </div>
-    </Container>
+        <div className="color-fondo-contenedor">
+          <div>
+            {cargando ? (
+              <div className="cargando">
+                <Spinner animation="border" />
+              </div>
+            ) : (
+              <ItemList
+                items={filtrado.map((prod) => ({
+                  ...prod,
+                  verProducto: () => abrirPop(prods),
+                  textButton: "Ver",
+                  AddToCartButton: (
+                    <AddToCartButton
+                      product={prod}
+                      addToCart={addToCart}
+                      removerItem={removerItem}
+                      getQuantityById={getQuantityById}
+                    />
+                  ),
+                }))}
+                // verDetalleProducto={abrirPop}
+              />
+            )}
+          </div>
+        </div>
+      </Container>
+    </>
   );
 };
 

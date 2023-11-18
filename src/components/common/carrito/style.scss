@@ -1,52 +1,45 @@
 @import "../../variables.scss";
 
-.cart {
-  display: none;
-}
-
 .cart-button {
   color: white;
+  .iconoCarrito {
+    color: $color-letra;
+    cursor: pointer;
+  }
 }
-.letra {
-  color: $color-letra;
-}
-
-.offcanvas-right {
-  transform: translateX(100%);
-  width: var(--bs-offcanvas-width);
-  transition: transform 0.3s ease-in-out;
+.carrito {
+  .menuCarrito {
+    transform: translateX(100%);
+    width: var(--bs-offcanvas-width);
+    transition: transform 0.3s ease-in-out;
+  }
 }
 .cuerpoCarrito {
   height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  .botones {
+    padding-bottom: 1rem;
+    .inciarCompraBoton {
+      margin-right: 1rem;
+    }
+    .botonLimpiar {
+    }
+  }
+  .letra {
+    color: $color-letra;
+  }
+  .carroFooter {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
 }
 
-.offcanvas-right.show {
+.menuCarrito.show {
   transform: translateX(0);
 }
-
-.iconoCarrito {
-  color: $color-letra;
-  cursor: pointer;
-}
-
 .iconoCarrito:hover {
   color: $color-imagen-rojo;
 }
-
-.carroFooter {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.botones{
-  padding-bottom: 1rem;
-}
-
-.botonComprar{
-  margin-right: 1rem;
-}
-

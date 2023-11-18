@@ -2,45 +2,39 @@
   "__collections__": {
     "productos": {
       "01": {
-        "precio": "1100",
-        "descripción": "biribiri",
-        "nombre": "Pre-Pizza de cebolla",
-        "category": "Pizza",
+        "nombre": "Clasico",
+        "descripción": "Muzzarela, sardo, pategras.",
+        "precio": "1000",
         "__collections__": {}
       },
       "02": {
+        "nombre": "Emchipada",
+        "descripción": "Muzzarella, sardo, pategras, relleno empanadas de carne.",
         "precio": "1100",
-        "descripción": "biribiri",
-        "nombre": "Pan lactal clasico",
-        "category": "Pan lactal",
         "__collections__": {}
       },
       "03": {
-        "precio": "1200",
-        "descripción": "biribiri",
-        "nombre": "Pan lactal artesano",
-        "category": "Pan lactal",
+        "nombre": "Chipamon",
+        "descripción": "Muzzarella, sardo, pategras, jamon natural.",
+        "precio": "1100",
         "__collections__": {}
       },
       "04": {
-        "precio": "400",
-        "descripción": "biribiri",
-        "nombre": "Pan hamburguesa",
-        "category": "Pan sanguche",
+        "nombre": "Chipresse",
+        "descripción": "Muzzarella, sardo, pategras, tomatitos cherrys y albahaca.",
+        "precio": "1300",
         "__collections__": {}
       },
       "05": {
-        "precio": "600",
-        "descripción": "biribiri",
-        "nombre": "Pan ciabata",
-        "category": "Pan sanguche",
+        "nombre": "Chipafort",
+        "descripción": "Muzzarella, sardo, pategras, roquefort.",
+        "precio": "1300",
         "__collections__": {}
       },
       "06": {
-        "precio": "1200",
-        "descripción": "biribiri",
-        "nombre": "Pan de campo",
-        "category": "Pan artesano",
+        "nombre": "Fort Apio Nuez",
+        "descripción": "Muzzarela, sardo, pategras, roquefort, apio y nuez.",
+        "precio": "1300",
         "__collections__": {}
       }
     }
