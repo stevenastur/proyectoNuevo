@@ -5,6 +5,7 @@ import { Button, Card, Modal, Offcanvas } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 import { AddToCartButton } from "../boton/add-to-card";
+import clasico from "../../../assets/chipaClasico.jpg";
 
 const CarritoCompras = () => {
   const carritoId = useId();
@@ -25,7 +26,7 @@ const CarritoCompras = () => {
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-  
+
   const [primerProductoAgregado, setPrimerProductoAgregado] = useState(false);
 
   const quantity = cart
@@ -42,17 +43,15 @@ const CarritoCompras = () => {
     message
   )}`;
 
-
-
   useEffect(() => {
     if (quantity === 1 && !primerProductoAgregado) {
-      setShow(true); 
-      setPrimerProductoAgregado(true)
-    } if (quantity === 0) {
-      setPrimerProductoAgregado(false)
+      setShow(true);
+      setPrimerProductoAgregado(true);
+    }
+    if (quantity === 0) {
+      setPrimerProductoAgregado(false);
     }
   }, [cart]);
-
 
   const finalizarCompra = () => {
     if (!cart || cart.length == 0) {
@@ -103,18 +102,23 @@ const CarritoCompras = () => {
 
   const renderCartItem = (item) => {
     return (
-      <Card key={item.id} className="mb-2">
-        <Card.Body>
-          <Card.Title>{item.nombre}</Card.Title>
-          <Card.Text>Cantidad: {item.quantity}</Card.Text>
-          <Card.Text>Precio: ${item.precio}</Card.Text>
-          <div className="cuerpoBotonCarrito">
-            <AddToCartButton
-              product={item}
-              addToCart={addToCart}
-              removerItem={removerItem}
-              quantity={getQuantityById(item.id)}
-            />
+      <Card key={item.id} className="mb-2 ">
+        <Card.Body className="carritoProductos">
+          <div className="imagenCarrito">
+            <Card.Img variant="top" src={clasico} alt="171x180" />
+          </div>
+          <div className="datosCarrito">
+            <Card.Title>{item.nombre}</Card.Title>
+            <Card.Text>Cantidad: {item.quantity}</Card.Text>
+            <Card.Text>Precio: ${item.precio}</Card.Text>
+            <div className="cuerpoBotonCarrito">
+              <AddToCartButton
+                product={item}
+                addToCart={addToCart}
+                removerItem={removerItem}
+                quantity={getQuantityById(item.id)}
+              />
+            </div>
           </div>
         </Card.Body>
       </Card>

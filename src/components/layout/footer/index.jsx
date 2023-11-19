@@ -2,7 +2,7 @@ import { Col, Container, Image, Nav, Navbar } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
 import "./style.scss";
 import { CarritoCompras } from "../../common/carrito";
-import logo from "../../../assets/logoMejorado.png";
+import logo from "../../../assets/logoChipa.webp";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faCreditCard,
@@ -64,8 +64,7 @@ const Footer = () => {
             <Col className="imagen">
               <Navbar.Brand className="brand-footer">
                 <Image className="imagen-footer" src={logo} roundedCircle />
-                <h1>Raíces italianas, </h1>
-                <h1>Manos Argentinas.</h1>
+                <h1>TRADICIÓN 100% ARTESANAL </h1>
               </Navbar.Brand>
             </Col>
           </div>
