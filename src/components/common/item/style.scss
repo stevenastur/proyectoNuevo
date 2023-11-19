@@ -155,14 +155,15 @@
     border-radius: 45rem 10rem 10rem 45rem !important;
     .columna-card {
       display: grid;
-      grid-auto-rows: auto;
-      grid-template-columns: 2fr 3fr;
+      // grid-auto-rows: auto;
+      grid-template-columns: 3fr 4fr !important;
       height: 100%;
       .imagen {
         padding: 0px;
         padding-left: 0.4rem;
         padding-bottom: 0.6rem;
         height: 100%;
+        // width: 20rem;
         .card-img-top {
           height: 100%;
           width: auto;
@@ -173,6 +174,12 @@
         // padding: 0.6rem;
         // padding-right: 0px;
         // padding-top: 1rem;
+        .titulo-prod {
+          padding: 0;
+        }
+        .descripcion-prod {
+          padding: 0;
+        }
         .precio-agregar {
           padding: 1.2rem 0.9rem;
           justify-content: space-between;
@@ -216,6 +223,12 @@
 @media (max-width: 768px) {
   .tarjeta-individual {
     height: 14rem !important;
+    .card-title {
+      font-size: 1.1rem !important;
+    }
+    .card-text {
+      font-size: 0.95rem !important;
+    }
   }
 }
 
@@ -248,16 +261,48 @@
     }
     .columna-card-agregar {
       // padding: 0px !important;
+
+      // .precio-agregar {
+      //   padding: 0.3rem 0.4rem !important;
+      //   display: flex;
+      //   flex-direction: column;
+      //   align-items: center;
+      //   .precio {
+      //     margin: 0 0.5rem !important;
+      //   }
+      //   .cuerpoBoton {
+      //     margin: 0.1rem 0 !important;
+      //   }
+      // }
+    }
+  }
+}
+
+// @media (max-width: 650px) {
+//   .tarjeta-individual {
+//     height: 10rem !important;
+//     .columna-card {
+//       height: auto;
+//   }
+// }}
+
+@media (max-width: 650px) {
+  .tarjeta-individual {
+    height: 11rem !important;
+    .imagen {
+      // height: rem!important;
+      padding-bottom: 1rem !important;
+    }
+    .columna-card-agregar {
+      // display: flex;
+      // justify-content: center;
       .precio-agregar {
-        padding: 0.3rem 0.4rem !important;
+        padding: 0rem 0rem !important;
+        margin-bottom: 0.3rem;
         display: flex;
-        flex-direction: column;
-        align-items: center;
+        justify-content: space-around;
         .precio {
-          margin: 0 0.5rem !important;
-        }
-        .cuerpoBoton {
-          margin: 0.1rem 0 !important;
+          margin: 0 !important;
         }
       }
     }
@@ -279,9 +324,103 @@
   }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 520px) {
   .tarjeta-individual {
-    // height: 16rem !important;
+    height: 9rem !important;
+    .imagen {
+      height: 9.5rem !important;
+    }
+  }
+}
+
+@media (max-width: 550px) {
+  .tarjeta-individual {
+    height: 9rem !important;
+    .imagen {
+      height: 9.5rem !important;
+    }
+    .precio-agregar {
+      height: 40% !important;
+      display: flex;
+      align-items: center;
+      .cuerpoBoton {
+        width: 5.3rem !important;
+        height: 2.5rem;
+        padding: 0rem;
+      }
+    }
+  }
+}
+
+@media (max-width: 440px) {
+  .tarjeta-individual {
+    height: 8rem !important;
+    .imagen {
+      height: 8.5rem !important;
+    }
+    .card-title {
+      font-size: 0.9rem !important;
+    }
+    .card-text {
+      font-size: 0.75rem !important;
+    }
+    .precio-agregar {
+      height: 40% !important;
+      display: flex;
+      align-items: center;
+      .cuerpoBoton {
+        width: 4rem !important;
+        height: 2rem;
+        padding: 0rem;
+        .bottonAgregarAlCarro {
+          font-size: 0.9rem !important;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 400px) {
+  .tarjeta-individual {
+    .imagen {
+      width: 9.2rem;
+    }
+  }
+}
+
+@media (max-width: 375px) {
+  .tarjeta-individual {
+    .columna-card {
+      grid-template-columns: 4fr 4fr !important;
+    }
+  }
+}
+
+@media (max-width: 350px) {
+  .tarjeta-individual {
+    .card-title {
+      font-size: 0.8rem !important;
+    }
+    .card-text {
+      font-size: 0.65rem !important;
+    }
+    .precio-agregar {
+      .cuerpoBoton {
+        height: 1.4rem;
+        .bottonAgregarAlCarro {
+          width: 4.4rem !important; 
+          padding: 0rem!important;
+          font-size: 0.79rem !important;
+        }
+      }
+    }
+  }
+}
+@media (max-width: 310px) {
+  .tarjeta-individual {
+    .columna-card {
+      grid-template-columns: 4fr 4fr !important;
+    }
   }
 }
 
@@ -300,29 +439,29 @@
 //   }
 // }
 
-@media (max-width: 460px) {
-  .tarjeta-individual {
-    border-radius: 45rem 45rem 10rem 10rem !important;
-    height: 30rem !important;
-    .columna-card {
-      padding: 0px !important;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      .imagen {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: 0;
+// @media (max-width: 460px) {
+//   .tarjeta-individual {
+//     border-radius: 45rem 45rem 10rem 10rem !important;
+//     height: 30rem !important;
+//     .columna-card {
+//       padding: 0px !important;
+//       display: flex;
+//       flex-direction: column;
+//       align-items: center;
+//       .imagen {
+//         display: flex;
+//         justify-content: center;
+//         align-items: center;
+//         padding: 0;
 
-        .card-img-top {
-          border-bottom-left-radius: 40%;
-          border-bottom-right-radius: 40%;
-          padding: 0;
-          height: auto;
-          width: auto;
-        }
-      }
-    }
-  }
-}
+//         .card-img-top {
+//           border-bottom-left-radius: 40%;
+//           border-bottom-right-radius: 40%;
+//           padding: 0;
+//           height: auto;
+//           width: auto;
+//         }
+//       }
+//     }
+//   }
+// }
