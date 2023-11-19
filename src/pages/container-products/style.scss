@@ -5,7 +5,6 @@
   flex-direction: column;
   height: auto;
   padding: 0px!important;
-  
   .titulo {
     margin-top: 13vh;
     color: $color-letra;
@@ -29,3 +28,18 @@
 }
 
 
+
+@media (max-width: 390px) {
+
+  p{
+    font-size: 0.9rem!important;
+  }
+  
+}
+
+@media (max-width: 310px) {
+
+  p{
+    font-size: 0.8rem!important;
+  }
+}

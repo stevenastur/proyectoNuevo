@@ -16,7 +16,7 @@ const Footer = () => {
   return (
     <>
       <Navbar className="footer">
-        <Container className="contenedor-footer">
+        <Container fluid className="contenedor-footer">
           <div className="datos-completos">
             <Col className="datos atencio alineados">
               <div className="titulos">

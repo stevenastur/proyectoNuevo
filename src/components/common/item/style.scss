@@ -38,8 +38,8 @@
         margin: 1rem;
       }
     }
-    .descripcion-prod{
-      .card-text{
+    .descripcion-prod {
+      .card-text {
         color: $color-fondo-crema;
         margin: 1rem;
       }
@@ -158,44 +158,64 @@
       grid-auto-rows: auto;
       grid-template-columns: 2fr 3fr;
       height: 100%;
-    }
-    .imagen {
-      padding: 0px;
-      padding-left: 0.4rem;
-      padding-bottom: 0.6rem;
-      height: 100%;
-      .card-img-top {
+      .imagen {
+        padding: 0px;
+        padding-left: 0.4rem;
+        padding-bottom: 0.6rem;
         height: 100%;
-        width: auto;
+        .card-img-top {
+          height: 100%;
+          width: auto;
+        }
       }
-    }
-    .columna-card-agregar {
-      padding: 0.6rem;
-      padding-right: 0px;
-      padding-top: 1rem;
-      .precio-agregar {
-        padding: 1.2rem 0.9rem;
-        // padding-right: 4rem!important;
+      .columna-card-agregar {
+        padding: 0;
+        // padding: 0.6rem;
+        // padding-right: 0px;
+        // padding-top: 1rem;
+        .precio-agregar {
+          padding: 1.2rem 0.9rem;
+          justify-content: space-between;
+          // padding-right: 4rem!important;
+        }
+        .card-title {
+          margin: 0rem !important;
+        }
+        .card-text {
+          margin: 0rem !important;
+        }
       }
     }
   }
 }
 
 @media (max-width: 910px) {
-  .columna-card {
-    grid-template-columns: 2fr 1fr;
-  }
-  .columna-card-agregar {
-    .card-title {
-      margin: 0.5rem !important;
+  .tarjeta-individual {
+    height: 16rem !important;
+    .columna-card {
+      // grid-template-columns: 1fr 2fr;
+      .columna-card-agregar {
+        .card-title {
+          margin: 0.5rem !important;
+        }
+      }
+      .precio-agregar {
+        // padding: 0.9rem 0.4rem !important;
+        // padding-bottom: 0.9rem;
+        .precio {
+          margin: 0 0.5rem !important;
+        }
+      }
+      .cuerpoBoton {
+        height: 3rem;
+      }
     }
   }
-  .precio-agregar {
-    padding: 0.9rem 0.4rem !important;
-    padding-bottom: 0.9rem;
-    .precio {
-      margin: 0 0.5rem !important;
-    }
+}
+
+@media (max-width: 768px) {
+  .tarjeta-individual {
+    height: 14rem !important;
   }
 }
 
@@ -217,37 +237,105 @@
 @media (max-width: 690px) {
   .columna-card {
     grid-template-columns: 10fr 2fr;
-  }
-  .imagen {
-    width: 100%;
-    padding-top: 0.4rem;
-    .card-img-top {
-      height: 100%;
-      border-bottom-left-radius: 40%;
-      border-bottom-right-radius: 40%;
+    .imagen {
+      width: 100%;
+      padding-top: 0.4rem;
+      .card-img-top {
+        height: 100%;
+        border-bottom-left-radius: 40%;
+        border-bottom-right-radius: 40%;
+      }
+    }
+    .columna-card-agregar {
+      // padding: 0px !important;
+      .precio-agregar {
+        padding: 0.3rem 0.4rem !important;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .precio {
+          margin: 0 0.5rem !important;
+        }
+        .cuerpoBoton {
+          margin: 0.1rem 0 !important;
+        }
+      }
     }
   }
-  .precio-agregar {
-    padding: 0.3rem 0.4rem !important;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    .precio {
-      margin: 0 0.5rem !important;
-    }
-  }
-
 }
 
 @media (max-width: 630px) {
-  .tarjeta-individual {
-    height: 12rem!important;
-  }
+  // .tarjeta-individual {
+  //   height: 12rem !important;
+  // }
   .precio-agregar {
     padding: 0rem 0rem !important;
     margin-bottom: 0.3rem;
+    display: flex;
+    justify-content: space-around;
     .precio {
       margin: 0 !important;
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  .tarjeta-individual {
+    // height: 16rem !important;
+    
+  }
+}
+
+@media (max-width: 460px) {
+  .columna-card {
+    grid-template-columns: 10fr 2fr;
+    .titulo-prod{
+      padding-right: 0;
+    }
+    .descripcion-prod{
+      padding-right: 0;
+    }
+    .card-img-top{
+      padding-right: 0;
+    }
+  }
+}
+
+@media (max-width: 390px) {
+  .tarjeta-individual{
+    border-radius: 45rem 45rem 10rem 10rem !important;
+    height: 30rem!important;
+    .columna-card {
+      padding: 0px !important;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      // display: grid;
+      // grid-template-columns: 1fr;
+      // grid-template-rows: 1fr 1fr;
+      // grid-template-areas: 
+      // "imagen"
+      // "columna-card-agregar";
+      // .imagen{
+      //   grid-area: imagen;
+      // }
+      // .columna-card-agregar{
+      //   grid-area: columna-card-agregar;
+      // }
+      .imagen {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0;
+    
+        .card-img-top {
+          border-bottom-left-radius: 40%;
+          border-bottom-right-radius: 40%;
+          padding: 0;
+          height: auto;
+          width: auto;
+        }
+      }
     }
   }
 }

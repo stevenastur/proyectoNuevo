@@ -28,8 +28,6 @@ const Header = () => {
     <>
       <Navbar className={`header ${navbarTransparent ? "transparent" : ""}`}  expand="lg">
         <Container fluid className="contHeader">
-          <div>
-          </div>
           <div className="logoHeader">
             <Image src={logoChipa} roundedCircle className="imgHeader" />
           </div>

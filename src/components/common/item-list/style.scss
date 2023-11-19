@@ -57,9 +57,19 @@
 
 @media (max-width: 992px) {
   .tarjetaGrandeList {
+    padding-top: 3rem;
+    padding-bottom: 5rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
     display: grid;
     grid-auto-rows: auto;
     grid-template-columns: 2fr;
+    .tarjetaGrandeList {
+      padding-top: 3rem;
+      padding-bottom: 5rem;
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
     .tarjetaList {
       display: flex;
       align-items: center;
@@ -68,17 +78,18 @@
 }
 
 @media (max-width: 910px) {
-  .tarjetaGrandeList {
-    padding-top: 3rem;
-    padding-bottom: 5rem;
-    padding-left: 2rem;
-    padding-right: 2rem;
-  }
+
   .columna-card {
     display: grid;
     grid-auto-rows: auto;
-    grid-template-columns: 7fr 5fr !important;
     height: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .tarjetaGrandeList {
+    padding-left: 0.3rem;
+    padding-right: 0.3rem;
   }
 }
 
@@ -87,6 +98,7 @@
     padding-left: 0.3rem;
     padding-right: 0.3rem;
   }
+
 }
 
 
@@ -95,5 +107,24 @@
   .tarjetaGrandeList {
     padding-left: 0.1rem;
     padding-right: 0.1rem;
+  }
+}
+
+
+@media (max-width: 500px) {
+  .tarjetaList {
+    margin: 3% 2%;
+  }
+}
+
+@media (max-width: 390px) {
+  .tarjetaList {
+    margin: 3% 7%;
+  }
+}
+
+@media (max-width: 310px) {
+  .tarjetaList {
+    margin: 3% 5%;
   }
 }
