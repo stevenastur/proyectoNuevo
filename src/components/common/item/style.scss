@@ -2,7 +2,7 @@
 
 .tarjeta-individual {
   height: 39rem !important;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.13);
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 5);
   border-radius: 45rem 45rem 10rem 10rem !important;
   background-color: $color-imagen-oscuro !important;
   overflow: hidden;
@@ -282,52 +282,39 @@
 @media (max-width: 500px) {
   .tarjeta-individual {
     // height: 16rem !important;
-    
   }
 }
+
+// @media (max-width: 460px) {
+//   .columna-card {
+//     grid-template-columns: 10fr 2fr;
+//     .titulo-prod {
+//       padding-right: 0;
+//     }
+//     .descripcion-prod {
+//       padding-right: 0;
+//     }
+//     .card-img-top {
+//       padding-right: 0;
+//     }
+//   }
+// }
 
 @media (max-width: 460px) {
-  .columna-card {
-    grid-template-columns: 10fr 2fr;
-    .titulo-prod{
-      padding-right: 0;
-    }
-    .descripcion-prod{
-      padding-right: 0;
-    }
-    .card-img-top{
-      padding-right: 0;
-    }
-  }
-}
-
-@media (max-width: 390px) {
-  .tarjeta-individual{
+  .tarjeta-individual {
     border-radius: 45rem 45rem 10rem 10rem !important;
-    height: 30rem!important;
+    height: 30rem !important;
     .columna-card {
       padding: 0px !important;
       display: flex;
       flex-direction: column;
       align-items: center;
-      // display: grid;
-      // grid-template-columns: 1fr;
-      // grid-template-rows: 1fr 1fr;
-      // grid-template-areas: 
-      // "imagen"
-      // "columna-card-agregar";
-      // .imagen{
-      //   grid-area: imagen;
-      // }
-      // .columna-card-agregar{
-      //   grid-area: columna-card-agregar;
-      // }
       .imagen {
         display: flex;
         justify-content: center;
         align-items: center;
         padding: 0;
-    
+
         .card-img-top {
           border-bottom-left-radius: 40%;
           border-bottom-right-radius: 40%;

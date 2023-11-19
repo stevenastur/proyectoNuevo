@@ -117,6 +117,12 @@
   }
 }
 
+@media (max-width: 460px) {
+  .tarjetaList {
+    margin: 3% 15%;
+  }
+}
+
 @media (max-width: 390px) {
   .tarjetaList {
     margin: 3% 7%;
