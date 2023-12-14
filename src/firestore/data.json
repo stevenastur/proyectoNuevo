@@ -4,7 +4,10 @@
       "01": {
         "nombre": "Clasico",
         "descripción": "Muzzarela, sardo, pategras.",
-        "precio": "1000",
+        "docena": "Docena",
+        "mediaDocena": "Media Docena",
+        "precioDocena": "1000",
+        "precioMediaDocena": "1000",
         "__collections__": {}
       },
       "02": {

@@ -60,29 +60,20 @@ const CarritoCompras = () => {
         0
       );
 
-      const pedidoTexto = cart.map((item) => `${item.nombre} (${item.quantity} unidades)       $${item.quantity * item.precio}`).join("\n");
+      const pedidoTexto = cart
+        .map(
+          (item) =>
+            `${item.nombre} (${item.quantity} unidades)       $${
+              item.quantity * item.precio
+            }`
+        )
+        .join("\n");
 
-    // Construir el mensaje completo para WhatsApp
-    const pedidoMessage = `¡Hola! Mi pedido es el siguiente:\n${pedidoTexto} \n\nMonto total: $${montoTotal}`;
+      const pedidoMessage = `¡Hola! Mi pedido es el siguiente:\n${pedidoTexto} \n\nMonto total: $${montoTotal}`;
 
-    // Combinar el enlace base de WhatsApp con el mensaje codificado
-    const pedidoWhatsappLink = `${whatsappLink}&text=${encodeURIComponent(
-      pedidoMessage
-    )}`;
-
-      // const pedido = cart.map((item) => {
-      //   return `${item.nombre} (${item.quantity} unidades) - monto: $${
-      //     item.quantity * item.precio
-      //   }`;
-      // });
-
-      // const pedidoTexto = pedido.join("\n");
-
-      // const pedidoMessage = `¡Hola! Mi pedido es el siguiente:\n${pedidoTexto} \n\nMonto total del pedido: $${montoTotal}`;
-
-      // const pedidoWhatsappLink = `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${encodeURIComponent(
-      //   message
-      // )}`;
+      const pedidoWhatsappLink = `${whatsappLink}&text=${encodeURIComponent(
+        pedidoMessage
+      )}`;
 
       window.open(pedidoWhatsappLink, "_blank");
 

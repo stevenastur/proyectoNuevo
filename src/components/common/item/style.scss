@@ -16,6 +16,7 @@
   .imagen {
     width: 100%;
     padding-top: 0.4rem;
+    cursor: pointer;
     .card-img-top {
       height: auto;
       border-bottom-left-radius: 40%;
@@ -33,12 +34,14 @@
     .titulo-prod {
       display: flex;
       justify-content: flex-start !important;
+      cursor: pointer;
       .card-title {
         color: $color-fondo-crema;
         margin: 1rem;
       }
     }
     .descripcion-prod {
+      cursor: pointer;
       .card-text {
         color: $color-fondo-crema;
         margin: 1rem;
@@ -54,6 +57,7 @@
         display: flex;
         align-items: center;
         .precio {
+          cursor: pointer;
           margin: 0 1rem;
           color: $color-fondo-crema;
         }
@@ -106,29 +110,6 @@
   }
 }
 
-// @keyframes pulse {
-//   0% {
-//     transform: scale(1);
-//   }
-//   100% {
-//     transform: scale(1.07);
-//   }
-// }
-
-// .tarjeta-individual:hover {
-//   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4);
-//   animation: pulse 0.5s 1;
-//   transform: scale(1.07);
-// }
-
-// .imagen:hover,
-// .precio:hover,
-// .addtoCart:hover,
-// .titulo-prod:hover {
-//   cursor: pointer;
-// }
-
-
 
 @media (max-width: 1400px) {
   .columna-card {
@@ -157,7 +138,7 @@
     border-radius: 45rem 10rem 10rem 45rem !important;
     .columna-card {
       display: grid;
-      // grid-auto-rows: auto;
+
       grid-template-columns: 3fr 4fr !important;
       height: 100%;
       .imagen {
@@ -165,7 +146,7 @@
         padding-left: 0.4rem;
         padding-bottom: 0.6rem;
         height: 100%;
-        // width: 20rem;
+
         .card-img-top {
           height: 100%;
           width: auto;
@@ -173,9 +154,7 @@
       }
       .columna-card-agregar {
         padding: 0;
-        // padding: 0.6rem;
-        // padding-right: 0px;
-        // padding-top: 1rem;
+
         .titulo-prod {
           padding: 0;
         }
@@ -185,7 +164,6 @@
         .precio-agregar {
           padding: 1.2rem 0.9rem;
           justify-content: space-between;
-          // padding-right: 4rem!important;
         }
         .card-title {
           margin: 0rem !important;
@@ -202,15 +180,12 @@
   .tarjeta-individual {
     height: 16rem !important;
     .columna-card {
-      // grid-template-columns: 1fr 2fr;
       .columna-card-agregar {
         .card-title {
           margin: 0.5rem !important;
         }
       }
       .precio-agregar {
-        // padding: 0.9rem 0.4rem !important;
-        // padding-bottom: 0.9rem;
         .precio {
           margin: 0 0.5rem !important;
         }
@@ -234,21 +209,6 @@
   }
 }
 
-// @media (max-width: 800px) {
-//   .columna-card {
-//     grid-template-columns: 2fr 1fr;
-//   }
-//   .imagen {
-//     width: 120%;
-//     padding-top: 0.4rem;
-//     height: auto;
-//     .card-img-top {
-//       height: auto;
-//       border-bottom-left-radius: 40%;
-//       border-bottom-right-radius: 40%;
-//     }
-//   }
-// }
 @media (max-width: 690px) {
   .columna-card {
     grid-template-columns: 10fr 2fr;
@@ -261,43 +221,16 @@
         border-bottom-right-radius: 40%;
       }
     }
-    .columna-card-agregar {
-      // padding: 0px !important;
-
-      // .precio-agregar {
-      //   padding: 0.3rem 0.4rem !important;
-      //   display: flex;
-      //   flex-direction: column;
-      //   align-items: center;
-      //   .precio {
-      //     margin: 0 0.5rem !important;
-      //   }
-      //   .cuerpoBoton {
-      //     margin: 0.1rem 0 !important;
-      //   }
-      // }
-    }
   }
 }
-
-// @media (max-width: 650px) {
-//   .tarjeta-individual {
-//     height: 10rem !important;
-//     .columna-card {
-//       height: auto;
-//   }
-// }}
 
 @media (max-width: 650px) {
   .tarjeta-individual {
     height: 11rem !important;
     .imagen {
-      // height: rem!important;
       padding-bottom: 1rem !important;
     }
     .columna-card-agregar {
-      // display: flex;
-      // justify-content: center;
       .precio-agregar {
         padding: 0rem 0rem !important;
         margin-bottom: 0.3rem;
@@ -312,9 +245,6 @@
 }
 
 @media (max-width: 630px) {
-  // .tarjeta-individual {
-  //   height: 12rem !important;
-  // }
   .precio-agregar {
     padding: 0rem 0rem !important;
     margin-bottom: 0.3rem;
@@ -410,8 +340,8 @@
       .cuerpoBoton {
         height: 1.4rem;
         .bottonAgregarAlCarro {
-          width: 4.4rem !important; 
-          padding: 0rem!important;
+          width: 4.4rem !important;
+          padding: 0rem !important;
           font-size: 0.79rem !important;
         }
       }
@@ -425,45 +355,3 @@
     }
   }
 }
-
-// @media (max-width: 460px) {
-//   .columna-card {
-//     grid-template-columns: 10fr 2fr;
-//     .titulo-prod {
-//       padding-right: 0;
-//     }
-//     .descripcion-prod {
-//       padding-right: 0;
-//     }
-//     .card-img-top {
-//       padding-right: 0;
-//     }
-//   }
-// }
-
-// @media (max-width: 460px) {
-//   .tarjeta-individual {
-//     border-radius: 45rem 45rem 10rem 10rem !important;
-//     height: 30rem !important;
-//     .columna-card {
-//       padding: 0px !important;
-//       display: flex;
-//       flex-direction: column;
-//       align-items: center;
-//       .imagen {
-//         display: flex;
-//         justify-content: center;
-//         align-items: center;
-//         padding: 0;
-
-//         .card-img-top {
-//           border-bottom-left-radius: 40%;
-//           border-bottom-right-radius: 40%;
-//           padding: 0;
-//           height: auto;
-//           width: auto;
-//         }
-//       }
-//     }
-//   }
-// }

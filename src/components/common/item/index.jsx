@@ -31,6 +31,7 @@ const Item = ({ id, nombre, precio, verProducto, textButton, img, descripción }
             <div className="precio-agregar">
               <div className="cuerpoPrecioTarj">
                 <Card.Text className="precio" onClick={verProducto}>$ {precio}</Card.Text>
+                <Card.Text className="precio" onClick={verProducto}>$ {precio}</Card.Text>
               </div>
               <div className="cuerpoBoton">
                 <AddToCartButton

@@ -8,23 +8,23 @@
     justify-content: space-evenly;
   
     .nombre-filtro {
-      border-radius: 20px; // Ajusta según sea necesario
-      padding: 8px 16px; // Ajusta según sea necesario
+      border-radius: 20px; 
+      padding: 8px 16px;
       color: $color-principal;
-      background-color: $color-imagen-oscuro; // Color de fondo predeterminado
+      background-color: $color-imagen-oscuro; 
       border: 1px solid $color-principal;
   
       &:hover,
       &:focus {
         color: $color-letra;
-        background-color: $color-principal; // Cambia el color al pasar el ratón por encima
+        background-color: $color-principal;
         border: 1px solid $color-letra;
       }
     }
   
     .active-link {
       color: $color-letra !important;
-      background-color: $color-principal; // Color de fondo cuando está activo
+      background-color: $color-principal;
       border: 1px solid $color-letra;
     }
   }

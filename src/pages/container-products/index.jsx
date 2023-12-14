@@ -23,10 +23,10 @@ const ContainerProducts = () => {
 
   const { addToCart, removerItem, getQuantityById } = useCart();
 
-  const [showModalProd, setshowModalProd] = useState(false);
+  const [showModalProd, setShowModalProd] = useState({});
 
-  const handleClose = () => setshowModalProd(false);
-  const handleShow = () => setshowModalProd(true);
+  const handleClose = () => setShowModalProd({ ...showModalProd, [prod.id]: false });
+  const handleShow = () => setShowModalProd({ ...showModalProd, [prod.id]: true });
 
   useEffect(() => {
     getProds(nombreFiltrado)
@@ -41,9 +41,8 @@ const ContainerProducts = () => {
   }, [nombreFiltrado]);
 
   const abrirPop = (prods) => {
-    console.log(prods);
     setProducto(prods);
-    setshowModalProd(true);
+    setShowModalProd(true);
   };
 
   const filtrado = filterProducts(prods);
@@ -52,23 +51,29 @@ const ContainerProducts = () => {
 
   return (
     <>
-    {prods.map((prod) => (
-      <Modal key={prod.id} show={showModalProd} onHide={handleClose}>
-        <Modal.Header handleClose>
-          <Modal.Title>{prod.nombre}</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>$ {prod.precio}</Modal.Body>
-        <Modal.Footer>
-          <Button variant="primary" onClick={handleClose}>
-            Cerrar
-          </Button>
-        </Modal.Footer>
-      </Modal>))}
+      {prods.map((prod) => (
+        <Modal className="modalDetalleProducto" key={prod.id} show={showModalProd[prod.id] || false}
+        onHide={handleClose}>
+          <Modal.Header handleClose>
+            <Modal.Title>
+              <h1>{prod.nombre}</h1>
+            </Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            <p>{prod.descripción}</p>
+            <p>$ {prod.precio}</p>
+          </Modal.Body>
+          <Modal.Footer>
+            <Button variant="dark" onClick={handleClose}>
+              Cerrar
+            </Button>
+          </Modal.Footer>
+        </Modal>
+      ))}
 
       <Container fluid className="mapa">
         <div className="menu">
           <h1 className="titulo">Nuestro Menú</h1>
-          {/* <FiltroProductos /> */}
         </div>
         <div className="color-fondo-contenedor">
           <div>
@@ -91,7 +96,6 @@ const ContainerProducts = () => {
                     />
                   ),
                 }))}
-                // verDetalleProducto={abrirPop}
               />
             )}
           </div>

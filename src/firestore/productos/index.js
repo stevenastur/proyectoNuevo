@@ -19,7 +19,7 @@ const getProds = async (nombreFiltrado) => {
   const snapshot = await getDocs(q);
 
   if (snapshot.empty) {
-    console.log('No se encontraron documentos.');
+    console.log("No se encontraron documentos.");
     return [];
   }
 
@@ -33,14 +33,7 @@ const getProd = async (id) => {
 
   const snapshot = await getDoc(prodRef);
 
-  // if (snapshot.exists()) {
-
   return { id: snapshot.id, ...snapshot.data() };
-
-  // } else {
-
-  //   throw new Error("No se encontró el producto");
-  // }
 };
 
 export { getProds, getProd };
