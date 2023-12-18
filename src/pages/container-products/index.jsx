@@ -85,8 +85,8 @@ const ContainerProducts = () => {
               <ItemList
                 items={filtrado.map((prod) => ({
                   ...prod,
-                  verProducto: () => abrirPop(prods),
-                  textButton: "Ver",
+                  // verProducto: () => abrirPop(prods),
+                  // textButton: "Ver",
                   AddToCartButton: (
                     <AddToCartButton
                       product={prod}

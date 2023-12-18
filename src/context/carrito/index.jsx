@@ -28,31 +28,32 @@ const CartProvider = ({ children }) => {
     };
   }, [cart]);
 
-  const addToCart = (product) => {
+  const addToCart = (product, type) => {
     setCart((currentCart) => {
-      const existItem = currentCart.find((item) => item.id === product.id);
+      const existItem = currentCart.find((item) => item.id === product.id && item.type === type);
       if (existItem) {
         const updatedCart = currentCart.map((item) => {
-          if (item.id === product.id) {
-            return { ...item, quantity: item.quantity + 1 };
+          if (item.id === product.id && item.type === type) {
+            return { ...item, quantity: item.quantity + 1, type };
           }
           return item;
         });
         return updatedCart;
       } else {
-        const newCart = [...currentCart, { ...product, quantity: 1 }];
+        const newCart = [...currentCart, { ...product, type, quantity: 1 }];
         return newCart;
       }
     });
   };
 
-  const removerItem = (product) => {
+
+  const removerItem = (product, type) => {
     setCart((currentCart) => {
-      const existItem = currentCart.find((item) => item.id === product.id);
+      const existItem = currentCart.find((item) => item.id === product.id && item.type === type);
       if (existItem) {
         const updatedCart = currentCart.map((item) => {
-          if (item.id === product.id) {
-            return { ...item, quantity: item.quantity - 1 };
+          if (item.id === product.id && item.type === type) {
+            return { ...item, quantity: item.quantity - 1, type  };
           }
           return item;
         });
@@ -61,9 +62,9 @@ const CartProvider = ({ children }) => {
       return currentCart;
     });
   };
-
-  const getQuantityById = (id) => {
-    const item = cart.find((item) => item.id === id);
+  
+  const getQuantityById = (id, type) => {
+    const item = cart.find((item) => item.id === id && item.type === type);
     return item ? item.quantity : 0;
   };
 

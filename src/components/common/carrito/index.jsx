@@ -101,23 +101,26 @@ const CarritoCompras = () => {
   };
 
   const renderCartItem = (item) => {
+    const uniqueKey = `${item.id}-${item.type}`;
+    
     return (
-      <Card key={item.id} className="mb-2 ">
+      <Card key={uniqueKey} className="mb-2">
         <Card.Body className="carritoProductos">
           <div className="imagenCarrito">
             <Card.Img variant="top" src={clasico} alt="171x180" />
           </div>
           <div className="datosCarrito">
             <Card.Title>{item.nombre}</Card.Title>
+            <Card.Text>{item.type}</Card.Text>
             <Card.Text>Cantidad: {item.quantity}</Card.Text>
             <Card.Text>Precio: ${item.precio}</Card.Text>
             <div className="cuerpoBotonCarrito">
-              <AddToCartButton
-                product={item}
-                addToCart={addToCart}
-                removerItem={removerItem}
-                quantity={getQuantityById(item.id)}
-              />
+            {/* <AddToCartButton
+              addToCart={addToCart}
+              removerItem={removerItem}
+              getQuantityById={getQuantityById}
+              product={item}
+            /> */}
             </div>
           </div>
         </Card.Body>
@@ -198,7 +201,7 @@ const CarritoCompras = () => {
                       <p className="letra">El carrito está vacío.</p>
                     </Card>
                   ) : (
-                    cart.map((item) => renderCartItem(item))
+                    cart.map((item) => renderCartItem(item, item.id))
                   )}
                 </div>
               </div>
