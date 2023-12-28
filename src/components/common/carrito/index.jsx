@@ -100,34 +100,6 @@ const CarritoCompras = () => {
     setCart([]);
   };
 
-  // const renderCartItem = (item) => {
-  //   const uniqueKey = `${item.id}-${item.type}`;
-    
-  //   return (
-  //     <Card key={uniqueKey} className="mb-2">
-  //       <Card.Body className="carritoProductos">
-  //         <div className="imagenCarrito">
-  //           <Card.Img variant="top" src={clasico} alt="171x180" />
-  //         </div>
-  //         <div className="datosCarrito">
-  //           <Card.Title>{item.nombre}</Card.Title>
-  //           <Card.Text>{item.type}</Card.Text>
-  //           <Card.Text>Cantidad: {item.quantity}</Card.Text>
-  //           <Card.Text>Precio: ${item.precio}</Card.Text>
-  //           <div className="cuerpoBotonCarrito">
-  //           <AddToCartButton
-  //             addToCart={addToCart}
-  //             removerItem={removerItem}
-  //             getQuantityById={getQuantityById}
-  //             product={item}
-  //           />
-  //           </div>
-  //         </div>
-  //       </Card.Body>
-  //     </Card>
-  //   );
-  // };
-
   const renderCartItem = (item) => {
     const uniqueKey = `${item.id}-${item.type}`;
     
@@ -141,10 +113,11 @@ const CarritoCompras = () => {
             <Card.Title>{item.nombre}</Card.Title>
             <div className="tiposCarrito">
               <div className="tipoCarrito">
-                <Card.Text>Type: Docena</Card.Text>
-                <Card.Text>Cantidad: {getQuantityById(item.id, 'Docena')}</Card.Text>
+                <Card.Text>{item.type}</Card.Text>
+                <Card.Text>Docena: {getQuantityById(item.id, "Docena")}</Card.Text>
+                <Card.Text>Media Docena: {getQuantityById(item.id, "MediaDocena")}</Card.Text>
                 <Card.Text>Precio: ${item.precio}</Card.Text>
-                <div className="cuerpoBotonCarrito">
+                {/* <div className="cuerpoBotonCarrito">
                   <AddToCartButton
                     addToCart={addToCart}
                     removerItem={removerItem}
@@ -152,21 +125,7 @@ const CarritoCompras = () => {
                     docenaQuantity={docenaQuantity}
                     product={{ ...item, type: 'Docena' }}
                   />
-                </div>
-              </div>
-              <div className="tipoCarrito">
-                <Card.Text>Type: Media Docena</Card.Text>
-                <Card.Text>Cantidad: {getQuantityById(item.id, 'MediaDocena')}</Card.Text>
-                <Card.Text>Precio: ${item.precio}</Card.Text>
-                <div className="cuerpoBotonCarrito">
-                  <AddToCartButton
-                    addToCart={addToCart}
-                    removerItem={removerItem}
-                    getQuantityById={getQuantityById}
-                    mediaDocenaQuantity={mediaDocenaQuantity}
-                    product={{ ...item, type: 'MediaDocena' }}
-                  />
-                </div>
+                </div> */}
               </div>
             </div>
           </div>

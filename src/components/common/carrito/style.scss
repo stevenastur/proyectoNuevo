@@ -58,6 +58,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      flex-direction: column;
       .bottonAgregarAlCarro {
         background-color: $color-fondo-crema !important;
         color: $color-imagen-oscuro;
@@ -71,6 +72,12 @@
         color: $color-imagen-oscuro;
         font-size: 1rem !important;
         padding: 0rem 0.5rem;
+      }
+      .mas-menos-docena{
+        display: flex;
+      }
+      .mas-menos-media-docena{
+        display: flex;
       }
       .botton-chico-menos {
         background-color: $color-imagen-oscuro !important;
