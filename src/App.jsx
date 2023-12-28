@@ -23,7 +23,7 @@ const firebaseConfig = {
   storageBucket: "lachipaceriatmp.appspot.com",
   messagingSenderId: "502094820395",
   appId: "1:502094820395:web:70eb159d638176e553266e",
-  measurementId: "G-NLZFWB95YV"
+  measurementId: "G-NLZFWB95YV",
 };
 
 // Initialize Firebase
@@ -34,16 +34,16 @@ function App() {
   return (
     <div className="App color-fondo">
       <CartProvider>
-      <FiltroProvider>
-        <BrowserRouter>
-          <Header />
-          <Routes>
-            <Route path="/" element={<ContainerProducts />} />
-            {/* <Route path="/item-detail/:id" element={<ContainerDetail/>}/> */}
-          </Routes>
-          <Footer/>
-        </BrowserRouter>
-      </FiltroProvider>
+        <FiltroProvider>
+          <BrowserRouter>
+            <Header />
+            <Routes>
+              <Route path="/" element={<ContainerProducts />} />
+              {/* <Route path="/item-detail/:id" element={<ContainerDetail/>}/> */}
+            </Routes>
+            <Footer />
+          </BrowserRouter>
+        </FiltroProvider>
       </CartProvider>
     </div>
   );

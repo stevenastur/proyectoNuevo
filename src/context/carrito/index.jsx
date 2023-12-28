@@ -63,6 +63,8 @@ const CartProvider = ({ children }) => {
     });
   };
   
+  
+
   const getQuantityById = (id, type) => {
     const item = cart.find((item) => item.id === id && item.type === type);
     return item ? item.quantity : 0;

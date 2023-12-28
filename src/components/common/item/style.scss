@@ -48,25 +48,48 @@
       }
     }
     .precio-agregar {
-      display: flex;
-      height: 32%;
-      justify-content: space-between;
-      padding: 2.5rem 0.9rem;
-      padding-bottom: 0rem;
-      .cuerpoPrecioTarj {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      grid-template-rows: 1fr;
+      grid-template-areas: "cuerpoPrecio cuerpoBoton";
+      margin: 0.4rem 0rem;
+      // height: 32%;
+      // justify-content: space-between;
+      // padding: 2.5rem 0.9rem;
+      // padding-bottom: 0rem;
+      .cuerpoPrecio {
+        grid-area: cuerpoPrecio;
         display: flex;
+        flex-direction: row;
         align-items: center;
-        .precio {
-          cursor: pointer;
-          margin: 0 1rem;
-          color: $color-fondo-crema;
+        justify-content: space-between;
+        padding: 0 0.4rem;
+        .linea-docena {
+          display: flex;
+          grid-area: linea-docena;
+          flex-direction: column;
+          align-items: flex-start;
+          p{
+            color: $color-fondo-crema;
+            width: 100%;
+          }
+        }
+        .linea-media-docena {
+          grid-area: linea-media-docena;
+          display: flex;
+          flex-direction: column;
+          align-items: flex-end;
+          .precio {
+            cursor: pointer;
+            // margin: 0 1rem;
+            color: $color-fondo-crema;
+          }
         }
       }
       .cuerpoBoton {
-        width: 6rem !important;
+        grid-area: cuerpoBoton;
         display: flex;
-        align-items: center;
-        justify-content: center;
+        flex-direction: column;
         .bottonAgregarAlCarro {
           background-color: $color-fondo-crema !important;
           color: $color-imagen-oscuro;
@@ -81,6 +104,16 @@
           font-size: 1rem !important;
           padding: 0rem 0.5rem;
         }
+        .mas-menos-docena{
+          display: flex;
+          justify-content: space-evenly;
+          margin-bottom: 0.2rem;
+        }
+        .mas-menos-media-docena{
+          display: flex;
+          justify-content: space-evenly;
+          margin-top: 0.2rem;
+        }
         .botton-chico-menos {
           background-color: $color-fondo-crema !important;
           color: $color-imagen-oscuro;
@@ -88,10 +121,10 @@
           border: none;
           border-radius: 100rem;
           display: flex;
-          align-items: center;
-          justify-content: center;
-          width: 80%;
-          height: 80%;
+          // align-items: center;
+          // justify-content: center;
+          // width: 80%;
+          // height: 80%;
         }
         .botton-chico-mas {
           background-color: $color-fondo-crema !important;
@@ -100,16 +133,15 @@
           border: none;
           border-radius: 100rem;
           display: flex;
-          align-items: center;
-          justify-content: center;
-          width: 80%;
-          height: 80%;
+          // align-items: center;
+          // justify-content: center;
+          // width: 80%;
+          // height: 80%;
         }
       }
     }
   }
 }
-
 
 @media (max-width: 1400px) {
   .columna-card {

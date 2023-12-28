@@ -25,8 +25,10 @@ const ContainerProducts = () => {
 
   const [showModalProd, setShowModalProd] = useState({});
 
-  const handleClose = () => setShowModalProd({ ...showModalProd, [prod.id]: false });
-  const handleShow = () => setShowModalProd({ ...showModalProd, [prod.id]: true });
+  const handleClose = () =>
+    setShowModalProd({ ...showModalProd, [prod.id]: false });
+  const handleShow = () =>
+    setShowModalProd({ ...showModalProd, [prod.id]: true });
 
   useEffect(() => {
     getProds(nombreFiltrado)
@@ -52,8 +54,12 @@ const ContainerProducts = () => {
   return (
     <>
       {prods.map((prod) => (
-        <Modal className="modalDetalleProducto" key={prod.id} show={showModalProd[prod.id] || false}
-        onHide={handleClose}>
+        <Modal
+          className="modalDetalleProducto"
+          key={prod.id}
+          show={showModalProd[prod.id] || false}
+          onHide={handleClose}
+        >
           <Modal.Header handleClose>
             <Modal.Title>
               <h1>{prod.nombre}</h1>
