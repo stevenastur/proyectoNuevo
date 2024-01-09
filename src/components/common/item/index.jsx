@@ -7,7 +7,8 @@ import clasico from "../../../assets/chipaClasico.jpg";
 const Item = ({
   id,
   nombre,
-  precio,
+  precioDocena,
+  precioMediaDocena,
   verProducto,
   textButton,
   img,
@@ -42,13 +43,13 @@ const Item = ({
                   <Card.Text className="precio">Media Docena</Card.Text>
                 </div>
                 <div className="linea-media-docena">
-                  <Card.Text className="precio">$ {precio}</Card.Text>
-                  <Card.Text className="precio">$ {precio}</Card.Text>
+                  <Card.Text className="precio">$ {precioDocena}</Card.Text>
+                  <Card.Text className="precio">$ {precioMediaDocena}</Card.Text>
                 </div>
               </div>
               <div className="cuerpoBoton">
                 <AddToCartButton
-                  product={{ id, nombre, precio }}
+                  product={{ id, nombre, precioDocena, precioMediaDocena }}
                   addToCart={addToCart}
                   removerItem={removerItem}
                   getQuantityById={getQuantityById}

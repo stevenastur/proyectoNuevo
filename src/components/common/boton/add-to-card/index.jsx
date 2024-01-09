@@ -9,6 +9,8 @@ const AddToCartButton = ({
   addToCart,
   removerItem,
   getQuantityById,
+  docenaQuantity,
+  mediaDocenaQuantity,
 }) => {
   const onAddDocena = () => {
     addToCart(product, "Docena");
@@ -26,12 +28,10 @@ const AddToCartButton = ({
     removerItem(product, "MediaDocena");
   };
 
-  const docenaQuantity = getQuantityById(product.id, "Docena");
-  const mediaDocenaQuantity = getQuantityById(product.id, "MediaDocena");
 
   return (
     <>
-      {docenaQuantity === 0 && mediaDocenaQuantity === 0 ? (
+      {getQuantityById(product.id, "Docena") === 0 && getQuantityById(product.id, "MediaDocena") === 0 ? (
         <>
           <Button className="bottonAgregarAlCarro" onClick={onAddDocena} style={{ marginBottom: '0.2rem' }}>
             <FontAwesomeIcon icon={faShoppingCart} style={{ color: "#700d14" }} />
@@ -45,13 +45,13 @@ const AddToCartButton = ({
         <>
           <div className="mas-menos-docena">
             <Button className="botton botton-chico-menos" onClick={onLessDocena}> - </Button>
-            <div className="cantidadEnProd">{docenaQuantity}</div>
+            <div className="cantidadEnProd">{getQuantityById(product.id, "Docena")}</div>
             <Button className="botton botton-chico-mas" onClick={onAddDocena}> + </Button>
           </div>
 
           <div className="mas-menos-media-docena">
             <Button className="botton botton-chico-menos" onClick={onLessMediaDocena}> - </Button>
-            <div className="cantidadEnProd">{mediaDocenaQuantity}</div>
+            <div className="cantidadEnProd">{getQuantityById(product.id, "MediaDocena")}</div>
             <Button className="botton botton-chico-mas" onClick={onAddMediaDocena}> + </Button>
           </div>
         </>

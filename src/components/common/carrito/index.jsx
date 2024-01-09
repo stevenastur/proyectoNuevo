@@ -10,10 +10,23 @@ import clasico from "../../../assets/chipaClasico.jpg";
 const CarritoCompras = () => {
   const carritoId = useId();
 
-  const { cart, setCart, getQuantityById, addToCart, removerItem, docenaQuantity, mediaDocenaQuantity } =
-    useContext(CartContext);
+  const {
+    cart,
+    setCart,
+    getQuantityById,
+    addToCart,
+    removerItem,
+    docenaQuantity,
+    mediaDocenaQuantity,
+    precioMediaDocena,
+    precioDocena,
+    quantityMediaDocena,
+    quantityDocena,
+    getPriceById,
+  } = useContext(CartContext);
 
   const [montoTotal, setMontoTotal] = useState(0);
+  const [montoPorProducto, setMontoPorProducto] = useState(0);
 
   const [showModalVacio, setShowModalVacio] = useState(false);
   const [showVacio, setShowVacio] = useState(false);
@@ -32,9 +45,21 @@ const CarritoCompras = () => {
   const quantity = cart
     ? cart.reduce((acc, curr) => acc + curr.quantity, 0)
     : 0;
-  const totalPrecio = cart
-    ? cart.reduce((acc, curr) => acc + curr.quantity * curr.precio, 0)
+
+
+
+  const totalPrice = cart
+    ? cart.reduce((acc, curr) => {
+        const precioDocena = curr.quantity * curr.precioDocena || 0;
+        const precioMediaDocena = curr.quantity * curr.precioMediaDocena || 0;
+
+        return acc + precioDocena + precioMediaDocena;
+      }, 0)
     : 0;
+
+  // const totalPrecio = cart
+  //   ? cart.reduce((acc, curr) => acc + curr.quantity * curr.precioSubtotal, 0)
+  //   : 0;
 
   const phoneNumber = "54 11 56533910";
   const message = "¡Hola! Mi pedido es el siguiente..";
@@ -101,8 +126,9 @@ const CarritoCompras = () => {
   };
 
   const renderCartItem = (item) => {
-    const uniqueKey = `${item.id}-${item.type}`;
-    
+    const uniqueKey = `${item.id}`;
+    console.log(cart);
+
     return (
       <Card key={uniqueKey} className="mb-2">
         <Card.Body className="carritoProductos">
@@ -113,19 +139,12 @@ const CarritoCompras = () => {
             <Card.Title>{item.nombre}</Card.Title>
             <div className="tiposCarrito">
               <div className="tipoCarrito">
-                <Card.Text>{item.type}</Card.Text>
-                <Card.Text>Docena: {getQuantityById(item.id, "Docena")}</Card.Text>
-                <Card.Text>Media Docena: {getQuantityById(item.id, "MediaDocena")}</Card.Text>
-                <Card.Text>Precio: ${item.precio}</Card.Text>
-                {/* <div className="cuerpoBotonCarrito">
-                  <AddToCartButton
-                    addToCart={addToCart}
-                    removerItem={removerItem}
-                    getQuantityById={getQuantityById}
-                    docenaQuantity={docenaQuantity}
-                    product={{ ...item, type: 'Docena' }}
-                  />
-                </div> */}
+                <Card.Text>
+                  Cantidad: {item.quantity}
+                </Card.Text>
+                <Card.Text>
+                  Precio: ${getPriceById(item.id)}
+                </Card.Text>
               </div>
             </div>
           </div>
@@ -133,7 +152,8 @@ const CarritoCompras = () => {
       </Card>
     );
   };
-  
+
+
   return (
     <>
       <label htmlFor={carritoId} className="cart-button" onClick={handleShow}>
@@ -207,13 +227,13 @@ const CarritoCompras = () => {
                       <p className="letra">El carrito está vacío.</p>
                     </Card>
                   ) : (
-                    cart.map((item) => renderCartItem(item, item.id))
+                    cart.map((item) => renderCartItem(item))
                   )}
                 </div>
               </div>
               <div className="carroFooter">
                 <div className="letra">Total estimado</div>
-                <div>${totalPrecio}</div>
+                <div>${totalPrice}</div>
               </div>
             </Offcanvas.Body>
           </Offcanvas>

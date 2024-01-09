@@ -4,40 +4,43 @@
       "01": {
         "nombre": "Clasico",
         "descripción": "Muzzarela, sardo, pategras.",
-        "docena": "Docena",
-        "mediaDocena": "Media Docena",
-        "precioDocena": "1000",
-        "precioMediaDocena": "1000",
+        "precioDocena": "1400",
+        "precioMediaDocena": "750",
         "__collections__": {}
       },
       "02": {
         "nombre": "Emchipada",
         "descripción": "Muzzarella, sardo, pategras, relleno empanadas de carne.",
-        "precio": "1100",
+        "precioDocena": "2500",
+        "precioMediaDocena": "1300",
         "__collections__": {}
       },
       "03": {
         "nombre": "Chipamon",
         "descripción": "Muzzarella, sardo, pategras, jamon natural.",
-        "precio": "1100",
+        "precioDocena": "2100",
+        "precioMediaDocena": "1100",
         "__collections__": {}
       },
       "04": {
         "nombre": "Chipresse",
         "descripción": "Muzzarella, sardo, pategras, tomatitos cherrys y albahaca.",
-        "precio": "1300",
+        "precioDocena": "2100",
+        "precioMediaDocena": "1100",
         "__collections__": {}
       },
       "05": {
         "nombre": "Chipafort",
         "descripción": "Muzzarella, sardo, pategras, roquefort.",
-        "precio": "1300",
+        "precioDocena": "2100",
+        "precioMediaDocena": "1100",
         "__collections__": {}
       },
       "06": {
         "nombre": "Fort Apio Nuez",
         "descripción": "Muzzarela, sardo, pategras, roquefort, apio y nuez.",
-        "precio": "1300",
+        "precioDocena": "2500",
+        "precioMediaDocena": "1300",
         "__collections__": {}
       }
     }
